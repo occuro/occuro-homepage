@@ -23,13 +23,22 @@ const fadeUp = {
    DATA
    ═══════════════════════════════════════════════════════════ */
 
-const features: { icon: LucideIcon; title: string; desc: string }[] = [
+const userFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Search, title: 'Entdecken', desc: 'Events in deiner Nähe — per Feed, Karte oder Suche. Filtere nach Kategorie, Genre und Zeitraum.' },
   { icon: Users, title: 'Verbinden', desc: 'Sieh welche Freunde hingehen. Teile Events und erlebe sie zusammen.' },
-  { icon: CalendarPlus, title: 'Erstellen', desc: 'Erstelle private oder öffentliche Events in unter einer Minute.' },
+  { icon: CalendarPlus, title: 'Teilnehmen', desc: 'Interesse melden, bestätigen, Tickets sichern — alles mit einem Tap.' },
   { icon: MessageCircle, title: 'Chatten', desc: 'Event-Chats und Direktnachrichten. Tausche dich aus, bevor und während des Events.' },
-  { icon: Ticket, title: 'Verwalten', desc: 'Digitale Tickets in deiner Wallet. Kalender mit Erinnerungen für alle Events.' },
-  { icon: BarChart3, title: 'Organisieren', desc: 'Veranstalter verwalten Events, Follower und Statistiken über das Dashboard.' },
+  { icon: Ticket, title: 'Wallet & Kalender', desc: 'Digitale Tickets in deiner Wallet. Kalenderansicht mit Erinnerungen für alle Events.' },
+  { icon: Gift, title: 'Gewinnspiele', desc: 'Nimm an Event-Gewinnspielen teil und gewinne Preise — direkt in der App.' },
+];
+
+const orgFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
+  { icon: Zap, title: 'In 60 Sekunden online', desc: 'Event erstellen war noch nie so schnell. Titel, Ort, Datum — sofort sichtbar für tausende Nutzer.' },
+  { icon: TrendingUp, title: 'Live-Dashboard', desc: 'Follower, Interessenten, Bestätigungen — sieh in Echtzeit, wie dein Event performt.' },
+  { icon: Megaphone, title: 'Organische Reichweite', desc: 'Jeder Interessent teilt dein Event im Feed seiner Freunde. Reichweite ohne Werbebudget.' },
+  { icon: Gift, title: 'Gewinnspiele', desc: 'Aktiviere Gewinnspiele für dein Event und steigere die Teilnahme. Automatische Ziehung inklusive.' },
+  { icon: MessageCircle, title: 'Direkter Draht', desc: 'Event-Chat für Ankündigungen und Fragen. Erreiche deine Teilnehmer direkt — ohne Social Media.' },
+  { icon: ShieldCheck, title: 'Verifiziertes Profil', desc: 'Zeig deiner Community, dass du geprüft bist. Mehr Vertrauen = mehr Teilnehmer.' },
 ];
 
 const userScreens = [
@@ -65,21 +74,20 @@ export default function HomePage() {
 
       {/* ─── NAVBAR ─── */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#0A0A0B]/80 border-b border-white/[0.06]">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+        <div className="relative max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           <a href="#" className="flex items-center gap-2">
             <OccuroRingLogo size={24} color="#fff" />
             <span className="text-base sm:text-lg font-heading font-bold tracking-tight">occuro</span>
           </a>
-          <div className="hidden md:flex items-center gap-8 text-[13px] text-white/60">
+          <div className="hidden md:flex items-center gap-8 text-[13px] text-white/60 absolute left-1/2 -translate-x-1/2">
             <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#veranstalter" className="hover:text-white transition-colors">Für Veranstalter</a>
             <a href="#die-app" className="hover:text-white transition-colors">Die App</a>
             <a href="#news" className="hover:text-white transition-colors">News</a>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={WEB_APP_URL}
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium border border-violet-500/40 text-violet-300 hover:bg-violet-500/10 transition-all"
+              className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium bg-violet-600/15 text-violet-300 hover:bg-violet-600/25 hover:text-violet-200 transition-all"
             >
               <Globe size={14} /> Web-App
             </a>
@@ -149,73 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURES ─── */}
-      <section id="features" className="py-16 sm:py-28 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
-            <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Features</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
-              Alles was du brauchst.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            {features.map((f, i) => (
-              <FeatureCard key={f.title} icon={f.icon} title={f.title} desc={f.desc} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── FÜR VERANSTALTER ─── */}
-      <section id="veranstalter" className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
-        </div>
-
-        <div className="relative max-w-5xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Für Veranstalter</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
-              Dein Event verdient mehr Reichweite.
-            </h2>
-            <p className="mt-3 text-xs sm:text-sm text-white/35 max-w-lg mx-auto">
-              occuro gibt dir die Tools, um Events professionell zu verwalten, deine Community aufzubauen und messbare Ergebnisse zu erzielen — kostenlos.
-            </p>
-          </div>
-
-          {/* Benefit grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-12 sm:mb-16">
-            <OrgBenefitCard icon={Zap} title="In 60 Sekunden online" desc="Event erstellen war noch nie so schnell. Titel, Ort, Datum — dein Event ist sofort sichtbar für tausende Nutzer." index={0} />
-            <OrgBenefitCard icon={TrendingUp} title="Live-Dashboard" desc="Follower, Interessenten, Bestätigungen — sieh in Echtzeit, wie dein Event performt." index={1} />
-            <OrgBenefitCard icon={Megaphone} title="Organische Reichweite" desc="Jeder Interessent teilt dein Event automatisch im Feed seiner Freunde. Reichweite ohne Werbebudget." index={2} />
-            <OrgBenefitCard icon={Gift} title="Gewinnspiele" desc="Aktiviere Gewinnspiele für dein Event und steigere die Teilnahme. Automatische Ziehung inklusive." index={3} />
-            <OrgBenefitCard icon={MessageCircle} title="Direkter Draht" desc="Event-Chat für Ankündigungen und Fragen. Erreiche deine Teilnehmer direkt — ohne Social Media." index={4} />
-            <OrgBenefitCard icon={ShieldCheck} title="Verifiziertes Profil" desc="Zeig deiner Community, dass du ein geprüfter Veranstalter bist. Mehr Vertrauen = mehr Teilnehmer." index={5} />
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            className="text-center"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-          >
-            <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-4 sm:p-6 rounded-2xl border border-violet-500/15 bg-violet-500/[0.04]">
-              <div className="text-center sm:text-left">
-                <p className="text-sm sm:text-base font-heading font-semibold">Jetzt kostenlos als Veranstalter starten</p>
-                <p className="text-[12px] sm:text-[13px] text-white/40 mt-0.5">Kein Abo, keine versteckten Kosten.</p>
-              </div>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
-              >
-                <Download size={15} /> Loslegen
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       {/* ─── DIE APP ─── */}
       <AppShowcase />
@@ -287,21 +229,84 @@ export default function HomePage() {
    COMPONENTS
    ═══════════════════════════════════════════════════════════ */
 
-function OrgBenefitCard({ icon: Icon, title, desc, index }: { icon: LucideIcon; title: string; desc: string; index: number }) {
+function FeaturesSection() {
+  const [tab, setTab] = useState<'user' | 'organizer'>('user');
+  const items = tab === 'user' ? userFeatures : orgFeatures;
+
   return (
-    <motion.div
-      className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-violet-500/10 bg-violet-500/[0.02] overflow-hidden transition-all duration-300 hover:border-violet-500/25 hover:bg-violet-500/[0.04]"
-      initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={index}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative">
-        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/15 border border-violet-500/15 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-violet-500/20 transition-all duration-300">
-          <Icon size={18} strokeWidth={1.6} className="text-violet-400" />
+    <section id="features" className="py-16 sm:py-28 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Features</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
+            {tab === 'user' ? 'Alles was du brauchst.' : 'Dein Event verdient mehr Reichweite.'}
+          </h2>
+          <p className="mt-3 text-xs sm:text-sm text-white/35 max-w-md mx-auto">
+            {tab === 'user'
+              ? 'Events finden, Freunde treffen, Momente teilen.'
+              : 'Kostenlos Events verwalten, Community aufbauen, Ergebnisse messen.'}
+          </p>
         </div>
-        <h3 className="text-[13px] sm:text-[15px] font-heading font-semibold mb-1.5 sm:mb-2">{title}</h3>
-        <p className="text-[11px] sm:text-[13px] text-white/40 leading-relaxed">{desc}</p>
+
+        {/* Tabs */}
+        <div className="flex justify-center mb-10 sm:mb-14">
+          <div className="inline-flex rounded-full border border-white/[0.08] bg-white/[0.03] p-1 sm:p-1.5 backdrop-blur-sm">
+            {(['user', 'organizer'] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={`relative px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-[12px] sm:text-[13px] font-semibold transition-all duration-300 ${
+                  tab === t
+                    ? 'bg-violet-600 text-white shadow-lg shadow-violet-500/25'
+                    : 'text-white/45 hover:text-white/70'
+                }`}
+              >
+                {t === 'user' ? 'Besucher' : 'Veranstalter'}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {items.map((f, i) => (
+                <FeatureCard key={f.title} icon={f.icon} title={f.title} desc={f.desc} index={i} />
+              ))}
+            </div>
+
+            {/* CTA for organizers */}
+            {tab === 'organizer' && (
+              <motion.div
+                className="mt-10 sm:mt-14 text-center"
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+              >
+                <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-4 sm:p-5 rounded-2xl border border-violet-500/15 bg-violet-500/[0.04]">
+                  <div className="text-center sm:text-left">
+                    <p className="text-sm sm:text-[15px] font-heading font-semibold">Jetzt kostenlos als Veranstalter starten</p>
+                    <p className="text-[11px] sm:text-[12px] text-white/40 mt-0.5">Kein Abo, keine versteckten Kosten.</p>
+                  </div>
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+                  >
+                    <Download size={15} /> Loslegen
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </motion.div>
+    </section>
   );
 }
 
