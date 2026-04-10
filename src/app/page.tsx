@@ -91,11 +91,13 @@ export default function HomePage() {
             >
               <Globe size={14} /> Web-App
             </a>
+            {/* Nav Download — only on mobile/tablet (the App Store link is
+                useless on desktop, where users should open the Web-App). */}
             <a
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-[12px] sm:text-[13px] font-medium bg-white text-[#0A0A0B] hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              className="lg:hidden flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-[12px] sm:text-[13px] font-medium bg-white text-[#0A0A0B] hover:scale-[1.02] active:scale-[0.98] transition-transform"
             >
               <Download size={14} /> Download
             </a>
@@ -138,17 +140,20 @@ export default function HomePage() {
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-0"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.5 }}
           >
+            {/* Hero "App herunterladen" — only on mobile/tablet. On desktop
+                only the "Im Browser öffnen" CTA remains, which is what
+                desktop visitors actually want. */}
             <a
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+              className="lg:hidden inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
             >
               <Download size={16} /> App herunterladen
             </a>
             <a
               href={WEB_APP_URL}
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold border border-white/15 text-white/80 hover:bg-white/5 hover:border-white/25 active:scale-[0.98] transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold border border-white/15 text-white/80 hover:bg-white/5 hover:border-white/25 active:scale-[0.98] transition-all lg:bg-violet-600 lg:text-white lg:border-violet-600 lg:hover:bg-violet-500 lg:hover:border-violet-500 lg:shadow-lg lg:shadow-violet-600/25"
             >
               <Globe size={16} /> Im Browser öffnen
             </a>
@@ -292,13 +297,21 @@ function FeaturesSection() {
                     <p className="text-sm sm:text-[15px] font-heading font-semibold">Jetzt kostenlos als Veranstalter starten</p>
                     <p className="text-[11px] sm:text-[12px] text-white/40 mt-0.5">Kein Abo, keine versteckten Kosten.</p>
                   </div>
+                  {/* Mobile/Tablet → App Store. Desktop → Web-App, weil
+                      Veranstalter ihre Events am PC eher im Browser anlegen. */}
                   <a
                     href={APP_STORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+                    className="lg:hidden shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
                   >
                     <Download size={15} /> Loslegen
+                  </a>
+                  <a
+                    href={WEB_APP_URL}
+                    className="hidden lg:inline-flex shrink-0 items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+                  >
+                    <Globe size={15} /> Loslegen
                   </a>
                 </div>
               </motion.div>
