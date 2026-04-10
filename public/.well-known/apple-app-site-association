@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["GT3SX6ZKWD.com.occuro.app"],
+        "components": [
+          { "/": "/event/*", "comment": "Event deep links" },
+          { "/": "/profile/*", "comment": "Profile deep links" },
+          { "/": "/invite/*", "comment": "Invite deep links" },
+          { "/": "/auth/*", "comment": "Auth deep links" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["GT3SX6ZKWD.com.occuro.app"]
+  }
+}
