@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.join(__dirname),
+  },
   // Apple App Site Association (AASA) — required for the iOS app's
   // Universal Links AND Strong-Password / Shared Web Credentials
   // integration. Apple is strict about two things:
