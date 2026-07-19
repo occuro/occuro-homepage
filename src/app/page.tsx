@@ -196,7 +196,7 @@ export default function HomePage() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <OccuroRingLogo size={20} />
-              <span className="text-sm font-heading font-bold">occuro</span>
+              <span className="text-sm font-heading font-bold tracking-tight">occuro</span>
             </div>
             <p className="text-[12px] text-ink-2 leading-relaxed">
               Events entdecken,<br />Momente teilen.
