@@ -4,16 +4,16 @@ export const metadata = { title: 'Impressum — occuro' };
 
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-[#0A0A0B] text-white px-4 sm:px-6 py-20 sm:py-28">
+    <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28">
       <div className="max-w-2xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-white/40 hover:text-white transition-colors mb-10">
+        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-ink transition-colors mb-10">
           &larr; Zurück
         </Link>
 
         <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight mb-2">Impressum</h1>
-        <p className="text-sm text-white/30 mb-10">AGB & rechtliche Angaben</p>
+        <p className="text-sm text-ink-3 mb-10">AGB & rechtliche Angaben</p>
 
-        <div className="space-y-10 text-[14px] text-white/60 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-white [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-white/80 [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-violet-400 [&_a]:hover:text-violet-300">
+        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-ink-2">
           <section>
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
@@ -34,7 +34,7 @@ export default function ImpressumPage() {
             </p>
           </section>
 
-          <hr className="border-white/[0.06]" />
+          <hr className="border-line" />
 
           <section>
             <h2>Allgemeine Geschäftsbedingungen</h2>
@@ -71,7 +71,7 @@ export default function ImpressumPage() {
             </p>
           </section>
 
-          <hr className="border-white/[0.06]" />
+          <hr className="border-line" />
 
           <section>
             <h2>Streitschlichtung</h2>
@@ -85,9 +85,9 @@ export default function ImpressumPage() {
           </section>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/[0.06] flex gap-4 text-[13px] text-white/40">
-          <Link href="/" className="hover:text-white transition-colors">Startseite</Link>
-          <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
+        <div className="mt-12 pt-8 border-t border-line flex gap-4 text-[13px] text-ink-3">
+          <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
+          <Link href="/datenschutz" className="hover:text-ink transition-colors">Datenschutz</Link>
         </div>
       </div>
     </main>

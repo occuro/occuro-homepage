@@ -8,14 +8,16 @@ const CELL = 28;
 const RADIUS = 100;
 const FADE_SPEED = 0.08;
 
-export function InteractiveGrid({ forceDark }: { forceDark?: boolean } = {}) {
+export function InteractiveGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const cellsRef = useRef<{ x: number; y: number; char: string; activeChar: string; brightness: number }[]>([]);
   const animRef = useRef<number>(0);
   const exclusionRef = useRef<DOMRect[]>([]);
   const dprRef = useRef(1);
-  const forceDarkRef = useRef(forceDark);
+  // Read per frame so the grid follows a live theme switch, not just
+  // whatever the scheme happened to be at mount.
+  const isDarkRef = useRef(false);
 
   const init = useCallback(() => {
     const canvas = canvasRef.current;
@@ -78,9 +80,13 @@ export function InteractiveGrid({ forceDark }: { forceDark?: boolean } = {}) {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const isDark = forceDarkRef.current || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const scheme = window.matchMedia('(prefers-color-scheme: dark)');
+    isDarkRef.current = scheme.matches;
+    const handleScheme = (e: MediaQueryListEvent) => { isDarkRef.current = e.matches; };
+    scheme.addEventListener('change', handleScheme);
 
     const animate = () => {
+      const isDark = isDarkRef.current;
       const dpr = dprRef.current;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -119,7 +125,7 @@ export function InteractiveGrid({ forceDark }: { forceDark?: boolean } = {}) {
           : `rgba(0, 0, 0, ${alpha})`;
 
         ctx.fillStyle = color;
-        ctx.font = `${11 + t * 3}px "Space Grotesk", monospace`;
+        ctx.font = `${11 + t * 3}px Inter, sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
@@ -143,6 +149,7 @@ export function InteractiveGrid({ forceDark }: { forceDark?: boolean } = {}) {
     return () => {
       cancelAnimationFrame(animRef.current);
       clearInterval(exInterval);
+      scheme.removeEventListener('change', handleScheme);
     };
   }, []);
 

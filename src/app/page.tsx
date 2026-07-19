@@ -70,24 +70,24 @@ const timeline = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0A0A0B] text-white">
+    <div className="flex flex-col min-h-screen bg-page text-ink">
 
       {/* ─── NAVBAR ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#0A0A0B]/80 border-b border-white/[0.06]">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-page/80 border-b border-line">
         <div className="relative max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           <a href="#" className="flex items-center gap-2">
-            <OccuroRingLogo size={24} color="#fff" />
+            <OccuroRingLogo size={24} />
             <span className="text-base sm:text-lg font-heading font-bold tracking-tight">occuro</span>
           </a>
-          <div className="hidden md:flex items-center gap-8 text-[13px] text-white/60 absolute left-1/2 -translate-x-1/2">
-            <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#die-app" className="hover:text-white transition-colors">Die App</a>
-            <a href="#news" className="hover:text-white transition-colors">News</a>
+          <div className="hidden md:flex items-center gap-8 text-[13px] text-ink-2 absolute left-1/2 -translate-x-1/2">
+            <a href="#features" className="hover:text-ink transition-colors">Features</a>
+            <a href="#die-app" className="hover:text-ink transition-colors">Die App</a>
+            <a href="#news" className="hover:text-ink transition-colors">News</a>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={WEB_APP_URL}
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium bg-violet-600/15 text-violet-300 hover:bg-violet-600/25 hover:text-violet-200 transition-all"
+              className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-xl text-[13px] font-medium bg-elevated text-ink-2 hover:bg-muted hover:text-ink transition-all"
             >
               <Globe size={14} /> Web-App
             </a>
@@ -97,7 +97,7 @@ export default function HomePage() {
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="lg:hidden flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-[12px] sm:text-[13px] font-medium bg-white text-[#0A0A0B] hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              className="lg:hidden flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-[12px] sm:text-[13px] font-medium bg-btn text-btn-ink hover:scale-[1.02] active:scale-[0.98] transition-transform"
             >
               <Download size={14} /> Download
             </a>
@@ -107,8 +107,11 @@ export default function HomePage() {
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <InteractiveGrid forceDark />
-        <div className="relative z-10 max-w-2xl mx-auto text-center px-6" data-grid-exclude>
+        <InteractiveGrid />
+        {/* max-w-3xl: the headline is two fixed lines ("Events entdecken," /
+            "Momente teilen.") — 2xl is narrow enough that the first line
+            wraps at the large desktop size and breaks that structure. */}
+        <div className="relative z-10 max-w-3xl mx-auto text-center px-6" data-grid-exclude>
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -119,19 +122,18 @@ export default function HomePage() {
               animate={{ rotate: 360 }}
               transition={{ duration: 60, ease: 'linear', repeat: Infinity }}
             >
-              <OccuroRingLogo size={72} color="#fff" />
+              <OccuroRingLogo size={72} />
             </motion.div>
           </motion.div>
           <motion.h1
             className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] leading-[1.05] font-heading font-bold tracking-tight"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Entdecke Events.<br />
-            <span className="text-white/60">Verbinde dich.</span><br />
-            <span className="text-violet-200/80">Teile Momente.</span>
+            Events entdecken,<br />
+            <span className="text-ink-3">Momente teilen.</span>
           </motion.h1>
           <motion.p
-            className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-white/45 max-w-md mx-auto leading-relaxed px-2"
+            className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-ink-2 max-w-md mx-auto leading-relaxed px-2"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }}
           >
             Finde Events in deiner Nähe, triff neue Leute und erlebe unvergessliche Momente.
@@ -147,13 +149,13 @@ export default function HomePage() {
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="lg:hidden inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+              className="lg:hidden inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm font-semibold bg-btn text-btn-ink hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <Download size={16} /> App herunterladen
             </a>
             <a
               href={WEB_APP_URL}
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold border border-white/15 text-white/80 hover:bg-white/5 hover:border-white/25 active:scale-[0.98] transition-all lg:bg-violet-600 lg:text-white lg:border-violet-600 lg:hover:bg-violet-500 lg:hover:border-violet-500 lg:shadow-lg lg:shadow-violet-600/25"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm font-semibold border border-line text-ink-2 hover:bg-elevated hover:border-line-strong active:scale-[0.98] transition-all lg:bg-btn lg:text-btn-ink lg:border-btn lg:hover:bg-btn lg:hover:border-btn lg:hover:opacity-90"
             >
               <Globe size={16} /> Im Browser öffnen
             </a>
@@ -171,14 +173,14 @@ export default function HomePage() {
       <section id="news" className="py-16 sm:py-28 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10 sm:mb-16">
-            <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Timeline</p>
+            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-[0.2em] mb-4">Timeline</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
               Was bisher geschah.
             </h2>
           </div>
           <div className="relative">
             {/* Connecting line */}
-            <div className="hidden md:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+            <div className="hidden md:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-line-strong to-transparent" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               {timeline.map((t, i) => (
                 <TimelineCard key={t.month} {...t} index={i} />
@@ -189,40 +191,40 @@ export default function HomePage() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="border-t border-white/[0.06] py-10 sm:py-12 px-4 sm:px-6">
+      <footer className="border-t border-line py-10 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <OccuroRingLogo size={20} color="#fff" />
+              <OccuroRingLogo size={20} />
               <span className="text-sm font-heading font-bold">occuro</span>
             </div>
-            <p className="text-[12px] text-white/35 leading-relaxed">
-              Entdecke Events. Verbinde dich.<br />Teile Momente.
+            <p className="text-[12px] text-ink-2 leading-relaxed">
+              Events entdecken,<br />Momente teilen.
             </p>
           </div>
           <div>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-wider mb-3">Produkt</p>
-            <div className="space-y-2 text-[13px] text-white/40">
-              <a href={APP_STORE_URL} className="block hover:text-white transition-colors">Download</a>
-              <a href="#features" className="block hover:text-white transition-colors">Features</a>
-              <a href={WEB_APP_URL} className="block hover:text-white transition-colors">Web-App</a>
+            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Produkt</p>
+            <div className="space-y-2 text-[13px] text-ink-2">
+              <a href={APP_STORE_URL} className="block hover:text-ink transition-colors">Download</a>
+              <a href="#features" className="block hover:text-ink transition-colors">Features</a>
+              <a href={WEB_APP_URL} className="block hover:text-ink transition-colors">Web-App</a>
             </div>
           </div>
           <div>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-wider mb-3">Rechtliches</p>
-            <div className="space-y-2 text-[13px] text-white/40">
-              <a href="/impressum" className="block hover:text-white transition-colors">Impressum</a>
-              <a href="/datenschutz" className="block hover:text-white transition-colors">Datenschutz</a>
+            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Rechtliches</p>
+            <div className="space-y-2 text-[13px] text-ink-2">
+              <a href="/impressum" className="block hover:text-ink transition-colors">Impressum</a>
+              <a href="/datenschutz" className="block hover:text-ink transition-colors">Datenschutz</a>
             </div>
           </div>
           <div>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-wider mb-3">Kontakt</p>
-            <a href="mailto:support@occuroapp.com" className="flex items-center gap-1.5 text-[13px] text-white/40 hover:text-white transition-colors">
+            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Kontakt</p>
+            <a href="mailto:support@occuroapp.com" className="flex items-center gap-1.5 text-[13px] text-ink-2 hover:text-ink transition-colors">
               <Mail size={13} /> support@occuroapp.com
             </a>
           </div>
         </div>
-        <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/[0.06] text-center text-[11px] text-white/25">
+        <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-line text-center text-[11px] text-ink-3">
           &copy; {new Date().getFullYear()} occuro
         </div>
       </footer>
@@ -242,11 +244,11 @@ function FeaturesSection() {
     <section id="features" className="py-16 sm:py-28 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Features</p>
+          <p className="text-[11px] font-medium text-ink-3 uppercase tracking-[0.2em] mb-4">Features</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
             {tab === 'user' ? 'Alles was du brauchst.' : 'Dein Event verdient mehr Reichweite.'}
           </h2>
-          <p className="mt-3 text-xs sm:text-sm text-white/35 max-w-md mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-ink-2 max-w-md mx-auto">
             {tab === 'user'
               ? 'Events finden, Freunde treffen, Momente teilen.'
               : 'Kostenlos Events verwalten, Community aufbauen, Ergebnisse messen.'}
@@ -255,15 +257,15 @@ function FeaturesSection() {
 
         {/* Tabs */}
         <div className="flex justify-center mb-10 sm:mb-14">
-          <div className="inline-flex rounded-full border border-white/[0.08] bg-white/[0.03] p-1 sm:p-1.5 backdrop-blur-sm">
+          <div className="inline-flex rounded-2xl border border-line bg-surface p-1 sm:p-1.5 backdrop-blur-sm">
             {(['user', 'organizer'] as const).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`relative px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-[12px] sm:text-[13px] font-semibold transition-all duration-300 ${
+                className={`relative px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-semibold transition-all duration-300 ${
                   tab === t
-                    ? 'bg-violet-600 text-white shadow-lg shadow-violet-500/25'
-                    : 'text-white/45 hover:text-white/70'
+                    ? 'bg-btn text-btn-ink'
+                    : 'text-ink-2 hover:text-ink'
                 }`}
               >
                 {t === 'user' ? 'Besucher' : 'Veranstalter'}
@@ -292,10 +294,10 @@ function FeaturesSection() {
                 className="mt-10 sm:mt-14 text-center"
                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
               >
-                <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-4 sm:p-5 rounded-2xl border border-violet-500/15 bg-violet-500/[0.04]">
+                <div className="inline-flex flex-col sm:flex-row items-center gap-3 p-4 sm:p-5 rounded-card border border-line bg-surface">
                   <div className="text-center sm:text-left">
                     <p className="text-sm sm:text-[15px] font-heading font-semibold">Jetzt kostenlos als Veranstalter starten</p>
-                    <p className="text-[11px] sm:text-[12px] text-white/40 mt-0.5">Kein Abo, keine versteckten Kosten.</p>
+                    <p className="text-[11px] sm:text-[12px] text-ink-2 mt-0.5">Kein Abo, keine versteckten Kosten.</p>
                   </div>
                   {/* Mobile/Tablet → App Store. Desktop → Web-App, weil
                       Veranstalter ihre Events am PC eher im Browser anlegen. */}
@@ -303,13 +305,13 @@ function FeaturesSection() {
                     href={APP_STORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="lg:hidden shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+                    className="lg:hidden shrink-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-[13px] font-semibold bg-btn text-btn-ink hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
                     <Download size={15} /> Loslegen
                   </a>
                   <a
                     href={WEB_APP_URL}
-                    className="hidden lg:inline-flex shrink-0 items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] font-semibold bg-violet-600 text-white hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-violet-600/25"
+                    className="hidden lg:inline-flex shrink-0 items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-[13px] font-semibold bg-btn text-btn-ink hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
                     <Globe size={15} /> Loslegen
                   </a>
@@ -326,17 +328,15 @@ function FeaturesSection() {
 function FeatureCard({ icon: Icon, title, desc, index }: { icon: LucideIcon; title: string; desc: string; index: number }) {
   return (
     <motion.div
-      className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-all duration-300 hover:border-violet-500/20"
+      className="group relative p-4 sm:p-6 rounded-xl sm:rounded-card border border-line bg-surface overflow-hidden transition-all duration-300 hover:border-line-strong"
       initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={index}
     >
-      {/* Hover glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative">
-        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-violet-500/10 border border-violet-500/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-violet-500/15 group-hover:border-violet-500/20 transition-all duration-300">
-          <Icon size={18} strokeWidth={1.6} className="text-violet-400 sm:[&]:w-5 sm:[&]:h-5" />
+        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-elevated border border-line flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-muted group-hover:border-line-strong transition-all duration-300">
+          <Icon size={18} strokeWidth={1.6} className="text-ink-2 sm:[&]:w-5 sm:[&]:h-5" />
         </div>
         <h3 className="text-[13px] sm:text-[15px] font-heading font-semibold mb-1.5 sm:mb-2">{title}</h3>
-        <p className="text-[11px] sm:text-[13px] text-white/40 leading-relaxed">{desc}</p>
+        <p className="text-[11px] sm:text-[13px] text-ink-2 leading-relaxed">{desc}</p>
       </div>
     </motion.div>
   );
@@ -345,15 +345,15 @@ function FeatureCard({ icon: Icon, title, desc, index }: { icon: LucideIcon; tit
 function TimelineCard({ month, year, title, desc, index }: { month: string; year: string; title: string; desc: string; index: number }) {
   return (
     <motion.div
-      className="relative p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-violet-500/20 transition-all duration-300"
+      className="relative p-4 sm:p-5 rounded-xl sm:rounded-card border border-line bg-surface hover:border-line-strong transition-all duration-300"
       initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={index}
     >
       {/* Dot on the line */}
-      <div className="hidden md:block absolute -top-[5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-violet-500 border-2 border-[#0A0A0B]" />
-      <p className="text-xl sm:text-2xl font-heading font-bold text-violet-400 mb-0.5">{month}</p>
-      <p className="text-[10px] sm:text-[11px] text-white/25 mb-2 sm:mb-3">{year}</p>
+      <div className="hidden md:block absolute -top-[5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-ink border-2 border-page" />
+      <p className="text-xl sm:text-2xl font-heading font-bold text-ink mb-0.5">{month}</p>
+      <p className="text-[10px] sm:text-[11px] text-ink-3 mb-2 sm:mb-3">{year}</p>
       <h3 className="text-[12px] sm:text-[14px] font-heading font-semibold mb-1 sm:mb-1.5">{title}</h3>
-      <p className="text-[11px] sm:text-[12px] text-white/35 leading-relaxed">{desc}</p>
+      <p className="text-[11px] sm:text-[12px] text-ink-2 leading-relaxed">{desc}</p>
     </motion.div>
   );
 }
@@ -364,18 +364,13 @@ function AppShowcase() {
 
   return (
     <section id="die-app" className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-violet-600/[0.03] blur-[120px]" />
-      </div>
-
       <div className="relative max-w-5xl mx-auto">
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-[11px] font-medium text-violet-400 uppercase tracking-[0.2em] mb-4">Die App</p>
+          <p className="text-[11px] font-medium text-ink-3 uppercase tracking-[0.2em] mb-4">Die App</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
             Ein Blick in occuro.
           </h2>
-          <p className="mt-3 text-xs sm:text-sm text-white/35 max-w-md mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-ink-2 max-w-md mx-auto">
             {tab === 'user'
               ? 'Events finden, Freunde treffen, Momente teilen.'
               : 'Events erstellen, Reichweite aufbauen, Community managen.'}
@@ -384,15 +379,15 @@ function AppShowcase() {
 
         {/* Tabs */}
         <div className="flex justify-center mb-12 sm:mb-20">
-          <div className="relative inline-flex rounded-full border border-white/[0.08] bg-white/[0.03] p-1 sm:p-1.5 backdrop-blur-sm">
+          <div className="relative inline-flex rounded-2xl border border-line bg-surface p-1 sm:p-1.5 backdrop-blur-sm">
             {(['user', 'organizer'] as const).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`relative px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-[12px] sm:text-[13px] font-semibold transition-all duration-300 ${
+                className={`relative px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-semibold transition-all duration-300 ${
                   tab === t
-                    ? 'bg-violet-600 text-white shadow-lg shadow-violet-500/25'
-                    : 'text-white/45 hover:text-white/70'
+                    ? 'bg-btn text-btn-ink'
+                    : 'text-ink-2 hover:text-ink'
                 }`}
               >
                 {t === 'user' ? 'Besucher' : 'Veranstalter'}
@@ -424,10 +419,8 @@ function AppShowcase() {
                     transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
                   >
                     <div className="relative group">
-                      {/* Glow behind phone */}
-                      <div className="absolute -inset-4 rounded-[3rem] bg-violet-500/[0.06] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                       {/* Phone frame */}
-                      <div className="relative rounded-[1.8rem] sm:rounded-[2.2rem] overflow-hidden border-[1.5px] border-white/[0.1] shadow-2xl shadow-black/40 bg-black">
+                      <div className="relative rounded-[1.8rem] sm:rounded-[2.2rem] overflow-hidden border-[1.5px] border-line shadow-2xl shadow-black/20 bg-black">
                         {/* Notch */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80px] sm:w-[100px] h-[22px] sm:h-[28px] bg-black rounded-b-xl sm:rounded-b-2xl z-10" />
                         <Image src={shot.src} alt={shot.title} width={270} height={585} className="w-full h-auto" />
@@ -444,11 +437,11 @@ function AppShowcase() {
                     transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
                   >
                     <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
-                      <span className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-violet-500/15 text-[10px] sm:text-[11px] font-bold text-violet-400">{i + 1}</span>
-                      <span className="text-[10px] sm:text-[11px] font-medium text-white/25 uppercase tracking-[0.15em]">von {screens.length}</span>
+                      <span className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-elevated border border-line text-[10px] sm:text-[11px] font-bold text-ink-2">{i + 1}</span>
+                      <span className="text-[10px] sm:text-[11px] font-medium text-ink-3 uppercase tracking-[0.15em]">von {screens.length}</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tight mb-2 sm:mb-3">{shot.title}</h3>
-                    <p className="text-[13px] sm:text-[15px] text-white/40 leading-relaxed max-w-sm mx-auto md:mx-0">{shot.desc}</p>
+                    <p className="text-[13px] sm:text-[15px] text-ink-2 leading-relaxed max-w-sm mx-auto md:mx-0">{shot.desc}</p>
                   </motion.div>
                 </div>
               );

@@ -5,7 +5,7 @@ import './globals.css';
 // image paths most importantly), so WhatsApp / iMessage / Slack get
 // absolute URLs they can fetch. Change this when the domain moves.
 const SITE_URL = 'https://www.occuroapp.com';
-const SITE_TITLE = 'occuro — Entdecke Events. Verbinde dich. Teile Momente.';
+const SITE_TITLE = 'occuro — Events entdecken, Momente teilen.';
 const SITE_DESCRIPTION = 'Finde Events in deiner Nähe, triff neue Leute und erlebe unvergessliche Momente.';
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" className="h-full">
-      <body className="min-h-full flex flex-col bg-[#0A0A0B] text-white">{children}</body>
+      <body className="min-h-full flex flex-col bg-page text-ink">{children}</body>
     </html>
   );
 }

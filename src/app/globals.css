@@ -1,29 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ════════════════════════════════════════════════════════════
+   DESIGN TOKENS — single source of truth for the whole site.
+
+   Mirrors the mobile app's palette (occuroapp/src/theme/ux.ts)
+   so web and app read as one product. Change a colour HERE and
+   it propagates to every utility class; there are deliberately
+   no colour literals left in the components.
+
+   Rules baked into this palette:
+   · the five accents below are the ONLY chromatic colours —
+     no other brand hue may appear anywhere on the site
+   · surfaces are neutral greys, never tinted towards blue
+   ════════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #0A0A0B;
-  --foreground: #FFFFFF;
+  color-scheme: light dark;
+
+  /* Surfaces */
+  --page: #FAF9F7;          /* warm off-white — never pure white */
+  --surface: #FFFFFF;       /* cards & panels sitting on --page */
+  --elevated: #F3F1EE;
+  --muted: #EDEAE6;
+
+  /* Hairlines */
+  --line: #00000014;        /* ~8% black — card outline */
+  --line-strong: #0000001F; /* ~12% black — hover / emphasis */
+
+  /* Text */
+  --ink: #1A1A1A;
+  --ink-2: #52524E;
+  --ink-3: #8C8C88;
+
+  /* Primary button */
+  --btn: #191919;
+  --btn-ink: #FAFAF8;
+
+  /* Accents — identical in light and dark, exactly as in the app. */
+  --live: #22C55E;          /* running now / attending */
+  --like: #F43F5E;          /* interested / like */
+  --pin: #FF3B30;           /* map pins */
+  --danger: #EF4444;        /* destructive actions */
+  --verified: #3B82F6;      /* verified badge — nothing else */
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #121212;
+    --surface: #1E1E1E;
+    --elevated: #2A2A2A;
+    --muted: #333333;
+
+    --line: #FFFFFF24;      /* ~14% white */
+    --line-strong: #FFFFFF38;
+
+    --ink: #FAFAFA;
+    --ink-2: #FFFFFFEB;
+    --ink-3: #FFFFFFBA;
+
+    --btn: #F4F4F5;
+    --btn-ink: #111114;
+  }
+}
+
+/* `inline` makes the generated utilities point straight at the
+   custom properties above, so the dark-mode override swaps every
+   colour on the page without Tailwind regenerating anything. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Poppins', sans-serif;
-  --font-heading: 'Outfit', sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-muted: var(--muted);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+
+  --color-btn: var(--btn);
+  --color-btn-ink: var(--btn-ink);
+
+  --color-live: var(--live);
+  --color-like: var(--like);
+  --color-pin: var(--pin);
+  --color-danger: var(--danger);
+  --color-verified: var(--verified);
+
+  /* Squircles, not pills: 12px for buttons/chips/inputs,
+     20px for large cards and sheets. */
+  --radius-chip: 12px;
+  --radius-card: 20px;
+
+  /* Inter everywhere — the app uses a single family. */
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif;
 }
 
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 body {
-  background: #0A0A0B;
-  color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
 }
 
+/* Tight tracking on headings is the signature of the app's
+   design (cf. the "occuro" wordmark). */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -31,7 +119,7 @@ a, button { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
 
 html { scroll-behavior: smooth; }
 
