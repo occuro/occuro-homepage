@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
+/* Outfit ist die durchgehende Schrift — Wortmark, Ueberschriften und
+   Fliesstext. Dieselbe Schrift traegt die Mobile-App (siehe
+   occuroapp/src/theme/fonts.ts), damit Marke und Produkt gleich klingen.
+   --font-heading und --font-mono sind historische Token-Namen und zeigen
+   ebenfalls auf Outfit, damit die bestehenden Aufrufstellen unveraendert
+   weiterlaufen. Gewicht 500 muss im Import bleiben: font-medium wird haeufig
+   benutzt und faellt sonst still auf einen anderen Schnitt zurueck. */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ════════════════════════════════════════════════════════════
@@ -94,11 +101,10 @@
   --radius-chip: 12px;
   --radius-card: 20px;
 
-  /* Inter everywhere — the app uses a single family. */
-  --font-sans: 'Inter', sans-serif;
-  /* Outfit traegt Ueberschriften und das Wortmark, Inter alles Lesende. */
+  /* Eine Familie fuer alles — siehe Kopfkommentar. */
+  --font-sans: 'Outfit', sans-serif;
   --font-heading: 'Outfit', sans-serif;
-  --font-mono: 'Inter', sans-serif;
+  --font-mono: 'Outfit', sans-serif;
 }
 
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -106,13 +112,13 @@
 body {
   background: var(--page);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* Tight tracking on headings is the signature of the app's
    design (cf. the "occuro" wordmark). */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }
 
