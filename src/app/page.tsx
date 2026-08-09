@@ -10,6 +10,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
+import { OutNowWordmark, OutNowWordText } from '@/components/outnow-wordmark';
 
 const APP_STORE_URL = 'https://apps.apple.com/app/occuro/id6760317905';
 const WEB_APP_URL = 'https://app.occuroapp.com';
@@ -42,16 +43,17 @@ const orgFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
 ];
 
 const userScreens = [
-  { src: '/app-screenshots/events.png', title: 'Event Feed', desc: 'Entdecke Events in deiner Nähe — per Feed, Karte oder Suche. Filtere nach Kategorie, Zeitraum und Ort.' },
-  { src: '/app-screenshots/event-detail.png', title: 'Event Details', desc: 'Alle Infos auf einen Blick: Datum, Ort, Beschreibung und wer teilnimmt. Direkt interessiert melden oder Ticket sichern.' },
-  { src: '/app-screenshots/event-karte.png', title: 'Event-Karte', desc: 'Finde Events auf der interaktiven Karte. Sieh was in deiner Umgebung passiert — heute, morgen oder am Wochenende.' },
-  { src: '/app-screenshots/kalender.png', title: 'Kalender', desc: 'Behalte den Überblick über deine Events. Der Kalender zeigt dir alle anstehenden Termine und Erinnerungen.' },
+  { src: '/app-screenshots/events.png', title: 'Event Feed', desc: 'Events in deiner Nähe im Feed — mit Filtern für Beliebt, Live, Heute und Wochenende. Oben siehst du direkt, bei welchen Events deine Freunde dabei sind.' },
+  { src: '/app-screenshots/event-detail.png', title: 'Event Details', desc: 'Alles zum Event auf einen Blick: Veranstalter, Start und Ende, Ort, Beschreibung. Mit einem Tap in den Kalender eintragen oder in Karten öffnen.' },
+  { src: '/app-screenshots/event-karte.png', title: 'Event-Karte', desc: 'Finde Events auf der Karte statt in einer Liste. Tippe einen Pin an und du siehst Titel, Ort, Zeitraum und Kategorie sofort.' },
+  { src: '/app-screenshots/entdecken-suche.png', title: 'Entdecken & Suche', desc: 'Suche nach Events, Personen und Veranstaltern. Darunter Vorschläge, die zu deinen Interessen passen.' },
+  { src: '/app-screenshots/kalender.png', title: 'Kalender', desc: 'Deine Events im Monatsüberblick. Tage mit Events sind markiert, ein Tap zeigt dir, was an dem Tag ansteht.' },
   { src: '/app-screenshots/profil.png', title: 'Dein Profil', desc: 'Dein Event-Erlebnis an einem Ort. Sieh deine Events, Freunde und geteilten Momente.' },
 ];
 
 const organizerScreens = [
-  { src: '/app-screenshots/event-erstellen.png', title: 'Event erstellen', desc: 'Erstelle öffentliche oder private Events in unter einer Minute. Titel, Ort, Datum — fertig.' },
-  { src: '/app-screenshots/gewinnspiel.png', title: 'Gewinnspiele', desc: 'Aktiviere Gewinnspiele für dein Event. Definiere Preise pro Platzierung und ziehe Gewinner automatisch.' },
+  { src: '/app-screenshots/event-erstellen.png', title: 'Event erstellen', desc: 'Titel, Slogan, Datum, Ort — mehr braucht es nicht. Öffentlich oder privat, in unter einer Minute online.' },
+  { src: '/app-screenshots/gewinnspiel.png', title: 'Gewinnspiele', desc: 'Aktiviere ein Gewinnspiel direkt beim Anlegen: Gewinn, Anzahl der Gewinner und Ziehungszeitpunkt festlegen — die Ziehung läuft automatisch.' },
   { src: '/app-screenshots/meine-events.png', title: 'Meine Events', desc: 'Alle deine Events an einem Ort. Sieh kommende, laufende und vergangene Veranstaltungen auf einen Blick.' },
   { src: '/app-screenshots/dashboard.png', title: 'Dashboard', desc: 'Reichweite, Follower, Conversions — dein Organizer-Dashboard zeigt dir die Performance deiner Events in Echtzeit.' },
   { src: '/app-screenshots/org-profil.png', title: 'Veranstalter-Profil', desc: 'Dein öffentliches Profil als Veranstalter. Top-Events, Follower und alles was deine Community sehen kann.' },
@@ -60,8 +62,9 @@ const organizerScreens = [
 const timeline = [
   { month: 'Jan', year: '2026', title: 'Soziales Event-Erlebnis', desc: 'Freunde sehen, Interesse teilen, Events gemeinsam entdecken.' },
   { month: 'Feb', year: '2026', title: 'Private & öffentliche Events', desc: 'Event-Erstellung mit Organizer-Dashboard für Veranstalter.' },
-  { month: 'Mrz', year: '2026', title: 'App Store Launch', desc: 'occuro offiziell im Apple App Store verfügbar.' },
+  { month: 'Mrz', year: '2026', title: 'App Store Launch', desc: 'Die App offiziell im Apple App Store verfügbar.' },
   { month: 'Apr', year: '2026', title: 'Gewinnspiele & Chat', desc: 'Event-Gewinnspiele, Live-Chat und Veranstalter-Dashboard.' },
+  { month: 'Aug', year: '2026', title: 'Aus occuro wird OutNow', desc: 'Die App heißt jetzt OutNow. occuro bleibt das Unternehmen dahinter.' },
 ];
 
 /* ═══════════════════════════════════════════════════════════
@@ -76,8 +79,7 @@ export default function HomePage() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-page/80 border-b border-line">
         <div className="relative max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           <a href="#" className="flex items-center gap-2">
-            <OccuroRingLogo size={24} />
-            <span className="text-base sm:text-lg font-heading font-bold tracking-tight">occuro</span>
+            <OutNowWordmark size={20} layout="row" />
           </a>
           <div className="hidden md:flex items-center gap-8 text-[13px] text-ink-2 absolute left-1/2 -translate-x-1/2">
             <a href="#features" className="hover:text-ink transition-colors">Features</a>
@@ -124,6 +126,14 @@ export default function HomePage() {
             >
               <OccuroRingLogo size={72} />
             </motion.div>
+          </motion.div>
+          {/* Die Wortmarke steht ausserhalb der rotierenden Huelle darueber —
+              sonst wuerde die Schrift mitdrehen. */}
+          <motion.div
+            className="mx-auto mb-8 -mt-6 flex justify-center"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <OutNowWordText size={30} />
           </motion.div>
           <motion.h1
             className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] leading-[1.05] font-heading font-bold tracking-tight"
@@ -195,8 +205,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <OccuroRingLogo size={20} />
-              <span className="text-sm font-heading font-bold tracking-tight">occuro</span>
+              <OutNowWordmark size={16} layout="row" />
             </div>
             <p className="text-[12px] text-ink-2 leading-relaxed">
               Events entdecken,<br />Momente teilen.
@@ -368,7 +377,7 @@ function AppShowcase() {
         <div className="text-center mb-10 sm:mb-14">
           <p className="text-[11px] font-medium text-ink-3 uppercase tracking-[0.2em] mb-4">Die App</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
-            Ein Blick in occuro.
+            Ein Blick in OutNow.
           </h2>
           <p className="mt-3 text-xs sm:text-sm text-ink-2 max-w-md mx-auto">
             {tab === 'user'

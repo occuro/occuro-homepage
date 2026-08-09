@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Datenschutz — occuro' };
+export const metadata = { title: 'Datenschutz — OutNow' };
 
 export default function DatenschutzPage() {
   return (
@@ -27,7 +27,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2>2. Welche Daten wir erheben</h2>
-            <p>Bei der Nutzung von occuro (App und Website) erheben wir folgende Daten:</p>
+            <p>Bei der Nutzung von OutNow (App und Website) erheben wir folgende Daten:</p>
 
             <h3>2.1 Registrierung & Profil</h3>
             <ul>
@@ -91,7 +91,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2>5. Drittanbieter und Auftragsverarbeiter</h2>
-            <p>Wir nutzen folgende Dienste zur Bereitstellung von occuro:</p>
+            <p>Wir nutzen folgende Dienste zur Bereitstellung von OutNow:</p>
             <table>
               <thead>
                 <tr><th>Dienst</th><th>Zweck</th><th>Serverstandort</th></tr>
@@ -166,7 +166,7 @@ export default function DatenschutzPage() {
           <section>
             <h2>10. Cookies</h2>
             <p>
-              Die occuro-Website verwendet keine Tracking-Cookies und kein Analytics.
+              Die OutNow-Website verwendet keine Tracking-Cookies und kein Analytics.
               Es werden nur technisch notwendige Cookies für die Funktion der Website gesetzt.
             </p>
           </section>

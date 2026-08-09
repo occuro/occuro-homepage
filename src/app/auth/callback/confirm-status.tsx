@@ -76,7 +76,7 @@ export default function ConfirmStatus() {
         <>
           <h1 className="text-xl font-heading font-bold tracking-tight mb-3">E-Mail bestätigt!</h1>
           <p className="text-[14px] text-ink-2 leading-relaxed mb-2">
-            Deine Registrierung bei occuro ist abgeschlossen.
+            Deine Registrierung bei OutNow ist abgeschlossen.
           </p>
           <p className="text-[14px] text-ink-2 leading-relaxed mb-8">
             Öffne jetzt die App und melde dich mit deinem Konto an.
@@ -89,7 +89,7 @@ export default function ConfirmStatus() {
           href="occuro://"
           className="inline-block w-full py-3.5 rounded-xl bg-btn text-btn-ink text-[15px] font-semibold hover:opacity-90 transition-opacity mb-3"
         >
-          occuro öffnen
+          OutNow öffnen
         </a>
       )}
 

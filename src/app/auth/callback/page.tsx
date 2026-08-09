@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import ConfirmStatus from './confirm-status';
+import { OutNowWordmark } from '@/components/outnow-wordmark';
 
-export const metadata = { title: 'E-Mail bestätigen — occuro' };
+export const metadata = { title: 'E-Mail bestätigen — OutNow' };
 
 // Landeseite für Supabase-Bestätigungslinks (Registrierung, Magic Link,
 // E-Mail-Wechsel). Die eigentliche Bestätigung passiert schon eine Station
@@ -17,8 +18,8 @@ export default function AuthCallbackPage() {
     <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28 flex items-center justify-center">
       <div className="w-full max-w-md">
         <div className="text-center mb-10">
-          <Link href="/" className="text-2xl font-heading font-bold tracking-tight">
-            occuro
+          <Link href="/" className="inline-block">
+            <OutNowWordmark size={26} layout="stacked" />
           </Link>
         </div>
 

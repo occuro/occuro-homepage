@@ -5,7 +5,7 @@ import './globals.css';
 // image paths most importantly), so WhatsApp / iMessage / Slack get
 // absolute URLs they can fetch. Change this when the domain moves.
 const SITE_URL = 'https://www.occuroapp.com';
-const SITE_TITLE = 'occuro — Events entdecken, Momente teilen.';
+const SITE_TITLE = 'OutNow — Events entdecken, Momente teilen.';
 const SITE_DESCRIPTION = 'Finde Events in deiner Nähe, triff neue Leute und erlebe unvergessliche Momente.';
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: SITE_URL,
-    siteName: 'occuro',
+    siteName: 'OutNow',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     locale: 'de_DE',

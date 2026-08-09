@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Impressum — occuro' };
+export const metadata = { title: 'Impressum — OutNow' };
 
 export default function ImpressumPage() {
   return (
@@ -41,13 +41,13 @@ export default function ImpressumPage() {
 
             <h3>1. Geltungsbereich</h3>
             <p>
-              Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der occuro App und der damit verbundenen Dienste.
+              Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der App OutNow, betrieben von occuro, und der damit verbundenen Dienste.
               Mit der Registrierung und Nutzung der App akzeptierst du diese Bedingungen.
             </p>
 
             <h3>2. Leistungsbeschreibung</h3>
             <p>
-              occuro ermöglicht dir, Events zu entdecken, zu erstellen und zu verwalten, Freunde zu finden,
+              OutNow ermöglicht dir, Events zu entdecken, zu erstellen und zu verwalten, Freunde zu finden,
               Tickets hochzuladen und Veranstalter zu folgen. Die genauen Funktionen können sich im Laufe der Zeit ändern.
             </p>
 
