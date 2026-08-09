@@ -10,7 +10,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { OutNowWordmark, OutNowWordText } from '@/components/outnow-wordmark';
+import { OutNowWordmark } from '@/components/outnow-wordmark';
 
 const APP_STORE_URL = 'https://apps.apple.com/app/occuro/id6760317905';
 const WEB_APP_URL = 'https://app.occuroapp.com';
@@ -126,14 +126,6 @@ export default function HomePage() {
             >
               <OccuroRingLogo size={72} />
             </motion.div>
-          </motion.div>
-          {/* Die Wortmarke steht ausserhalb der rotierenden Huelle darueber —
-              sonst wuerde die Schrift mitdrehen. */}
-          <motion.div
-            className="mx-auto mb-8 -mt-6 flex justify-center"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <OutNowWordText size={30} />
           </motion.div>
           <motion.h1
             className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] leading-[1.05] font-heading font-bold tracking-tight"
