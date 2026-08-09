@@ -64,7 +64,8 @@ const timeline = [
   { month: 'Feb', year: '2026', title: 'Private & öffentliche Events', desc: 'Event-Erstellung mit Organizer-Dashboard für Veranstalter.' },
   { month: 'Mrz', year: '2026', title: 'App Store Launch', desc: 'Die App offiziell im Apple App Store verfügbar.' },
   { month: 'Apr', year: '2026', title: 'Gewinnspiele & Chat', desc: 'Event-Gewinnspiele, Live-Chat und Veranstalter-Dashboard.' },
-  { month: 'Aug', year: '2026', title: 'Aus occuro wird OutNow', desc: 'Die App heißt jetzt OutNow. occuro bleibt das Unternehmen dahinter.' },
+  { month: 'Jul', year: '2026', title: 'Gastmodus & neues Design', desc: 'Erst umsehen, dann entscheiden — Events ansehen geht jetzt ohne Konto. Dazu ein durchgehend schwarz-weißes Design in App, Web-App und Website und ein spürbar schnellerer Start.' },
+  { month: 'Aug', year: '2026', title: 'Verlässliche Links & Anmeldung', desc: 'Geteilte Event-Links öffnen direkt die App statt den Browser. Registrierung und E-Mail-Bestätigung laufen sauber durch.' },
 ];
 
 /* ═══════════════════════════════════════════════════════════
