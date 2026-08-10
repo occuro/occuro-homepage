@@ -48,15 +48,11 @@ const userScreens = [
   { src: '/app-screenshots/event-karte.png', title: 'Event-Karte', desc: 'Finde Events auf der Karte statt in einer Liste. Tippe einen Pin an und du siehst Titel, Ort, Zeitraum und Kategorie sofort.' },
   { src: '/app-screenshots/entdecken-suche.png', title: 'Entdecken & Suche', desc: 'Suche nach Events, Personen und Veranstaltern. Darunter Vorschläge, die zu deinen Interessen passen.' },
   { src: '/app-screenshots/kalender.png', title: 'Kalender', desc: 'Deine Events im Monatsüberblick. Tage mit Events sind markiert, ein Tap zeigt dir, was an dem Tag ansteht.' },
-  { src: '/app-screenshots/profil.png', title: 'Dein Profil', desc: 'Dein Event-Erlebnis an einem Ort. Sieh deine Events, Freunde und geteilten Momente.' },
 ];
 
 const organizerScreens = [
   { src: '/app-screenshots/event-erstellen.png', title: 'Event erstellen', desc: 'Titel, Slogan, Datum, Ort — mehr braucht es nicht. Öffentlich oder privat, in unter einer Minute online.' },
   { src: '/app-screenshots/gewinnspiel.png', title: 'Gewinnspiele', desc: 'Aktiviere ein Gewinnspiel direkt beim Anlegen: Gewinn, Anzahl der Gewinner und Ziehungszeitpunkt festlegen — die Ziehung läuft automatisch.' },
-  { src: '/app-screenshots/meine-events.png', title: 'Meine Events', desc: 'Alle deine Events an einem Ort. Sieh kommende, laufende und vergangene Veranstaltungen auf einen Blick.' },
-  { src: '/app-screenshots/dashboard.png', title: 'Dashboard', desc: 'Reichweite, Follower, Conversions — dein Organizer-Dashboard zeigt dir die Performance deiner Events in Echtzeit.' },
-  { src: '/app-screenshots/org-profil.png', title: 'Veranstalter-Profil', desc: 'Dein öffentliches Profil als Veranstalter. Top-Events, Follower und alles was deine Community sehen kann.' },
 ];
 
 const timeline = [
