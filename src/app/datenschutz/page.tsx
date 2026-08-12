@@ -49,7 +49,7 @@ export default function DatenschutzPage() {
             <h3>2.3 Soziale Funktionen</h3>
             <ul>
               <li>Freundschaftsanfragen und -verbindungen</li>
-              <li>Chat-Nachrichten (Ende-zu-Ende zwischen App und Server)</li>
+              <li>Chat-Nachrichten (Inhalt, Zeitpunkt, Beteiligte)</li>
               <li>Veranstalter-Follows</li>
               <li>Blockierte Nutzer, Meldungen</li>
             </ul>
@@ -111,7 +111,29 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>6. Speicherdauer</h2>
+            <h2>6. Datensicherheit und Chat-Inhalte</h2>
+            <p>
+              Die Verbindung zwischen App und unseren Servern ist durchgehend
+              mit TLS verschlüsselt. Beim Hosting-Dienstleister werden die Daten
+              verschlüsselt gespeichert. Welche Daten ein Konto sehen darf, ist
+              serverseitig geregelt — ein Nutzer kann keine fremden Chats
+              abrufen.
+            </p>
+            <p>
+              <strong>Chat-Nachrichten sind nicht Ende-zu-Ende verschlüsselt.</strong>{' '}
+              Das bedeutet: Wir könnten technisch auf Chat-Inhalte zugreifen.
+              Im laufenden Betrieb tun wir das nicht. Ein Zugriff erfolgt nur,
+              wenn eine Nachricht gemeldet wird und wir den Vorwurf prüfen
+              müssen, oder wenn wir gesetzlich dazu verpflichtet sind.
+            </p>
+            <p>
+              Wir nennen das ausdrücklich, weil „Ende-zu-Ende-Verschlüsselung"
+              ein anderes Versprechen wäre: Bei ihr könnten ausschließlich die
+              Beteiligten mitlesen, auch wir nicht. Das setzen wir derzeit nicht
+              ein.
+            </p>
+
+            <h2>7. Speicherdauer</h2>
             <ul>
               <li>Profildaten: bis zur Löschung deines Kontos</li>
               <li>Events: bis zur Löschung durch den Ersteller oder 12 Monate nach Ablauf</li>
@@ -122,7 +144,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>7. Deine Rechte</h2>
+            <h2>8. Deine Rechte</h2>
             <p>Du hast jederzeit das Recht auf:</p>
             <ul>
               <li><strong>Auskunft</strong> (Art. 15 DSGVO) — welche Daten wir über dich speichern</li>
@@ -137,7 +159,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>8. Konto-Löschung</h2>
+            <h2>9. Konto-Löschung</h2>
             <p>
               Du kannst dein Konto jederzeit in der App unter Profil &rarr; Einstellungen &rarr; Konto löschen entfernen.
               Dabei werden alle deine personenbezogenen Daten unwiderruflich gelöscht.
@@ -145,7 +167,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>9. Live-Standort (optional)</h2>
+            <h2>10. Live-Standort (optional)</h2>
             <p>
               Wenn du &bdquo;Live-Standort teilen&ldquo; in den App-Einstellungen aktivierst, wird dein Standort
               im Hintergrund erfasst und mit deinen Freunden geteilt — ausschließlich um anzuzeigen,
@@ -164,7 +186,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>10. Cookies</h2>
+            <h2>11. Cookies</h2>
             <p>
               Die OutNow-Website verwendet keine Tracking-Cookies und kein Analytics.
               Es werden nur technisch notwendige Cookies für die Funktion der Website gesetzt.
@@ -172,7 +194,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>11. Beschwerderecht</h2>
+            <h2>12. Beschwerderecht</h2>
             <p>
               Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
               Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA),
@@ -181,7 +203,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>12. Änderungen</h2>
+            <h2>13. Änderungen</h2>
             <p>
               Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.
               Die aktuelle Version ist stets hier abrufbar.
