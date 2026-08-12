@@ -138,7 +138,7 @@ export default function DatenschutzPage() {
               <li>Profildaten: bis zur Löschung deines Kontos</li>
               <li>Events: bis zur Löschung durch den Ersteller oder 12 Monate nach Ablauf</li>
               <li>Chat-Nachrichten: bis zur Löschung durch dich oder Konto-Löschung</li>
-              <li>Standortdaten: werden nicht dauerhaft gespeichert, nur für die aktuelle Sitzung</li>
+              <li>Standortdaten: nur solange &bdquo;Live-Standort teilen&ldquo; aktiv ist. Der Wert wird alle drei Minuten überschrieben und beim Abschalten, beim Abmelden sowie bei der Konto-Löschung gelöscht</li>
               <li>Push-Token: bis zum Widerruf oder zur Konto-Löschung</li>
             </ul>
           </section>
@@ -178,6 +178,8 @@ export default function DatenschutzPage() {
               <li>Bei Deaktivierung oder Abmeldung wird dein Standort <strong>automatisch gelöscht</strong></li>
               <li>Dein <strong>genauer Standort</strong> wird anderen Nutzern <strong>nie</strong> angezeigt — es wird nur geprüft ob du dich innerhalb von 500m eines laufenden Events befindest</li>
               <li>Nur bestätigte Freunde können sehen, dass du bei einem Event bist</li>
+              <li>Angezeigt wirst du nur, wenn du dem Event <strong>zugesagt</strong> hast — wer ohne Zusage vorbeikommt, taucht nicht auf</li>
+              <li>Der zuletzt bekannte Standort gilt noch <strong>bis zu zwei Stunden</strong> weiter, damit ein kurzes Schließen der App dich nicht sofort verschwinden lässt</li>
             </ul>
             <p>
               <strong>Rechtsgrundlage:</strong> Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).

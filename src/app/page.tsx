@@ -25,20 +25,20 @@ const fadeUp = {
    ═══════════════════════════════════════════════════════════ */
 
 const userFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: Search, title: 'Entdecken', desc: 'Events in deiner Nähe — per Feed, Karte oder Suche. Filtere nach Kategorie, Genre und Zeitraum.' },
-  { icon: Users, title: 'Verbinden', desc: 'Sieh welche Freunde hingehen. Teile Events und erlebe sie zusammen.' },
+  { icon: Search, title: 'Entdecken', desc: 'Events in deiner Nähe — per Feed, Karte oder Suche. Folge Veranstaltern und erfahre, wenn sie etwas Neues planen.' },
+  { icon: Users, title: 'Verbinden', desc: 'Sieh welche Freunde hingehen — und wer gerade vor Ort ist, wenn sie ihren Standort teilen.' },
   { icon: CalendarPlus, title: 'Teilnehmen', desc: 'Interesse melden, bestätigen, Tickets sichern — alles mit einem Tap.' },
-  { icon: MessageCircle, title: 'Chatten', desc: 'Event-Chats und Direktnachrichten. Tausche dich aus, bevor und während des Events.' },
+  { icon: MessageCircle, title: 'Chatten', desc: 'Event-Chats und Direktnachrichten. Antworte gezielt auf einzelne Nachrichten, ein Doppeltipp setzt ein Herz.' },
   { icon: Ticket, title: 'Wallet & Kalender', desc: 'Digitale Tickets in deiner Wallet. Kalenderansicht mit Erinnerungen für alle Events.' },
   { icon: Gift, title: 'Gewinnspiele', desc: 'Nimm an Event-Gewinnspielen teil und gewinne Preise — direkt in der App.' },
 ];
 
 const orgFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: Zap, title: 'In 60 Sekunden online', desc: 'Event erstellen war noch nie so schnell. Titel, Ort, Datum — sofort sichtbar für tausende Nutzer.' },
+  { icon: Zap, title: 'In 60 Sekunden online', desc: 'Titel, Ort, Datum — mehr braucht es nicht. Dazu ein Banner und bis zu zehn weitere Bilder als Galerie.' },
   { icon: TrendingUp, title: 'Live-Dashboard', desc: 'Follower, Interessenten, Bestätigungen — sieh in Echtzeit, wie dein Event performt.' },
   { icon: Megaphone, title: 'Organische Reichweite', desc: 'Jeder Interessent teilt dein Event im Feed seiner Freunde. Reichweite ohne Werbebudget.' },
   { icon: Gift, title: 'Gewinnspiele', desc: 'Aktiviere Gewinnspiele für dein Event und steigere die Teilnahme. Automatische Ziehung inklusive.' },
-  { icon: MessageCircle, title: 'Direkter Draht', desc: 'Event-Chat für Ankündigungen und Fragen. Erreiche deine Teilnehmer direkt — ohne Social Media.' },
+  { icon: MessageCircle, title: 'Direkter Draht', desc: 'Event-Chat für Fragen, Event-Feed für Ankündigungen als Text, Foto oder Link. Ohne Umweg über Social Media.' },
   { icon: ShieldCheck, title: 'Verifiziertes Profil', desc: 'Zeig deiner Community, dass du geprüft bist. Mehr Vertrauen = mehr Teilnehmer.' },
 ];
 
@@ -46,6 +46,8 @@ const userScreens = [
   { src: '/app-screenshots/events.png', title: 'Event Feed', desc: 'Events in deiner Nähe im Feed — mit Filtern für Beliebt, Live, Heute und Wochenende. Oben siehst du direkt, bei welchen Events deine Freunde dabei sind.' },
   { src: '/app-screenshots/event-detail.png', title: 'Event Details', desc: 'Alles zum Event auf einen Blick: Veranstalter, Start und Ende, Ort, Beschreibung. Mit einem Tap in den Kalender eintragen oder in Karten öffnen.' },
   { src: '/app-screenshots/event-karte.png', title: 'Event-Karte', desc: 'Finde Events auf der Karte statt in einer Liste. Tippe einen Pin an und du siehst Titel, Ort, Zeitraum und Kategorie sofort.' },
+  { src: '/app-screenshots/karte-live.png', title: 'Was gerade läuft', desc: 'Events, die in diesem Moment laufen, sind auf der Karte schwarz markiert und mit LIVE beschriftet. Stehen Freunde dort, siehst du ihre Gesichter direkt am Pin.' },
+  { src: '/app-screenshots/freunde-vor-ort.png', title: 'Freunde vor Ort', desc: 'Wer von deinen Freunden gerade bei einem Event ist, steht in den Event-Details. Dafür muss man den Live-Standort selbst freigeben — sonst zeigt OutNow niemanden an.' },
   { src: '/app-screenshots/entdecken-suche.png', title: 'Entdecken & Suche', desc: 'Suche nach Events, Personen und Veranstaltern. Darunter Vorschläge, die zu deinen Interessen passen.' },
   { src: '/app-screenshots/kalender.png', title: 'Kalender', desc: 'Deine Events im Monatsüberblick. Tage mit Events sind markiert, ein Tap zeigt dir, was an dem Tag ansteht.' },
 ];
@@ -62,6 +64,7 @@ const timeline = [
   { month: 'Apr', year: '2026', title: 'Gewinnspiele & Chat', desc: 'Event-Gewinnspiele, Live-Chat und Veranstalter-Dashboard.' },
   { month: 'Jul', year: '2026', title: 'Gastmodus & neues Design', desc: 'Erst umsehen, dann entscheiden — Events ansehen geht jetzt ohne Konto. Dazu ein durchgehend schwarz-weißes Design in App, Web-App und Website und ein spürbar schnellerer Start.' },
   { month: 'Aug', year: '2026', title: 'Verlässliche Links & Anmeldung', desc: 'Geteilte Event-Links öffnen direkt die App statt den Browser. Registrierung und E-Mail-Bestätigung laufen sauber durch.' },
+  { month: 'Aug', year: '2026', title: 'Live-Events & Freunde vor Ort', desc: 'Was gerade läuft, ist auf der Karte schwarz markiert und mit LIVE beschriftet. Teilen Freunde ihren Standort, siehst du am Pin und in den Event-Details, wer schon dort ist.' },
 ];
 
 /* ═══════════════════════════════════════════════════════════
@@ -182,7 +185,7 @@ export default function HomePage() {
             <div className="hidden md:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-line-strong to-transparent" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               {timeline.map((t, i) => (
-                <TimelineCard key={t.month} {...t} index={i} />
+                <TimelineCard key={`${t.year}-${t.month}-${t.title}`} {...t} index={i} />
               ))}
             </div>
           </div>
