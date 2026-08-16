@@ -6,14 +6,14 @@ export default function ImpressumPage() {
   return (
     <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28">
       <div className="max-w-2xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-ink transition-colors mb-10">
+        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-gold transition-colors mb-10">
           &larr; Zurück
         </Link>
 
-        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight mb-2">Impressum</h1>
-        <p className="text-sm text-ink-3 mb-10">AGB & rechtliche Angaben</p>
+        <p className="text-[11.5px] font-semibold text-gold uppercase tracking-[0.18em] mb-4">AGB & rechtliche Angaben</p>
+        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-[-0.012em] mb-2 mb-10">Impressum</h1>
 
-        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-ink-2">
+        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-gold/40 [&_a]:hover:decoration-gold">
           <section>
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>

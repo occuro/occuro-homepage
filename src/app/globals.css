@@ -6,6 +6,10 @@
    weiterlaufen. Gewicht 500 muss im Import bleiben: font-medium wird haeufig
    benutzt und faellt sonst still auf einen anderen Schnitt zurueck. */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+/* Source Serif 4 traegt seit 17.08.2026 die ganze Seite — Ueberschriften,
+   Fliesstext, Knoepfe. Eine Stimme statt zweier Schriften. Ausgewaehlt, weil
+   sie Charter am naechsten kommt: sachlich und kraeftig, nicht verspielt. */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
 @import "tailwindcss";
 
 /* ════════════════════════════════════════════════════════════
@@ -44,6 +48,14 @@
   --btn: #191919;
   --btn-ink: #FAFAF8;
 
+  /* Markenakzent: das bräunliche Gold aus den Event-Plakaten der App und
+     dem Pitch-Deck. Anders als --live/--like ist er NICHT in beiden Themes
+     gleich — auf hellem Grund braucht er Tiefe, auf dunklem Wärme, sonst
+     verschwindet er. */
+  --gold: #8A6E3C;          /* Akzent auf hellem Grund */
+  --gold-satt: #6B5228;     /* Hover, gedrückter Zustand */
+  --gold-leise: #8A6E3C1F;  /* Flächen, Schleier */
+
   /* Accents — identical in light and dark, exactly as in the app. */
   --live: #22C55E;          /* running now / attending */
   --like: #F43F5E;          /* interested / like */
@@ -68,6 +80,10 @@
 
     --btn: #F4F4F5;
     --btn-ink: #111114;
+
+    --gold: #D9C4A0;
+    --gold-satt: #EBD9B8;
+    --gold-leise: #D9C4A029;
   }
 }
 
@@ -75,6 +91,9 @@
    custom properties above, so the dark-mode override swaps every
    colour on the page without Tailwind regenerating anything. */
 @theme inline {
+  --color-gold: var(--gold);
+  --color-gold-satt: var(--gold-satt);
+  --color-gold-leise: var(--gold-leise);
   --color-page: var(--page);
   --color-surface: var(--surface);
   --color-elevated: var(--elevated);
@@ -102,9 +121,12 @@
   --radius-card: 20px;
 
   /* Eine Familie fuer alles — siehe Kopfkommentar. */
-  --font-sans: 'Outfit', sans-serif;
-  --font-heading: 'Outfit', sans-serif;
-  --font-mono: 'Outfit', sans-serif;
+  --font-sans: 'Source Serif 4', Charter, 'Iowan Old Style', Georgia, serif;
+  --font-heading: 'Source Serif 4', Charter, 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'Source Serif 4', Georgia, serif;
+  /* Auch die Wortmarke traegt die Serife: der Gruender wollte am 17.08.2026
+     ausdruecklich EINE Schrift auf der ganzen Seite. */
+  --font-marke: 'Source Serif 4', Charter, Georgia, serif;
 }
 
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }

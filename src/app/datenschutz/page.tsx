@@ -6,14 +6,14 @@ export default function DatenschutzPage() {
   return (
     <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28">
       <div className="max-w-2xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-ink transition-colors mb-10">
+        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-gold transition-colors mb-10">
           &larr; Zurück
         </Link>
 
-        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight mb-2">Datenschutzerklärung</h1>
+        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-[-0.012em] mb-2">Datenschutzerklärung</h1>
         <p className="text-sm text-ink-3 mb-10">Stand: 19. März 2026</p>
 
-        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-ink-2 [&_table]:w-full [&_table]:text-[13px] [&_th]:text-left [&_th]:text-ink-3 [&_th]:pb-2 [&_th]:pr-4 [&_td]:py-2 [&_td]:pr-4 [&_td]:border-t [&_td]:border-line">
+        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-gold/40 [&_a]:hover:decoration-gold [&_table]:w-full [&_table]:text-[13px] [&_th]:text-left [&_th]:text-ink-3 [&_th]:pb-2 [&_th]:pr-4 [&_td]:py-2 [&_td]:pr-4 [&_td]:border-t [&_td]:border-line">
           <section>
             <h2>1. Verantwortlicher</h2>
             <p>
