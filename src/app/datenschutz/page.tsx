@@ -61,6 +61,26 @@ export default function DatenschutzPage() {
               <li>Standortdaten werden zur Anzeige nahegelegener Events verwendet</li>
             </ul>
 
+            <h3>2.6 Verifizierung von Veranstaltern</h3>
+            <p>
+              Wenn du dein Konto als Veranstalter verifizieren l&auml;sst, laden wir das von dir
+              gew&auml;hlte Nachweisdokument hoch. Zur Auswahl stehen:
+            </p>
+            <ul>
+              <li>Gewerbeanmeldung</li>
+              <li>Gewerbeerlaubnis oder Konzession</li>
+              <li>Ausweisdokument</li>
+              <li>ein sonstiger Nachweis deiner Wahl</li>
+            </ul>
+            <p>
+              Diese Dokumente dienen ausschlie&szlig;lich der einmaligen Pr&uuml;fung deiner
+              Veranstaltereigenschaft. Sie sind <strong>nicht &ouml;ffentlich</strong> und nur f&uuml;r
+              die pr&uuml;fenden Administratoren einsehbar. Sie werden <strong>nicht</strong> an die
+              automatische Inhaltspr&uuml;fung (Abschnitt 5) &uuml;bergeben.
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserf&uuml;llung)
+              sowie berechtigtes Interesse an der Echtheit von Veranstalterprofilen.
+            </p>
+
             <h3>2.5 Technische Daten</h3>
             <ul>
               <li>Push-Notification-Token (für Benachrichtigungen)</li>
@@ -100,6 +120,7 @@ export default function DatenschutzPage() {
                 <tr><td><strong>Supabase</strong></td><td>Auth, Datenbank, Speicher</td><td>Frankfurt (AWS eu-central-1)</td></tr>
                 <tr><td><strong>Vercel</strong></td><td>Website-Hosting</td><td>EU / Edge</td></tr>
                 <tr><td><strong>Expo</strong></td><td>Push-Benachrichtigungen</td><td>USA</td></tr>
+                <tr><td><strong>OpenAI</strong></td><td>Automatische Pr&uuml;fung von Texten und Bildern auf unzul&auml;ssige Inhalte, Pr&uuml;fung hochgeladener Tickets</td><td>USA</td></tr>
                 <tr><td><strong>Nominatim / OSM</strong></td><td>Ortssuche / Geocoding</td><td>EU</td></tr>
                 <tr><td><strong>Apple / Google</strong></td><td>App-Distribution</td><td>Global</td></tr>
               </tbody>
@@ -107,6 +128,22 @@ export default function DatenschutzPage() {
             <p>
               Bei Übermittlung in die USA erfolgt diese auf Basis des EU-US Data Privacy Framework
               bzw. Standardvertragsklauseln (Art. 46 DSGVO).
+            </p>
+            <p>
+              <strong>Automatische Inhaltspr&uuml;fung.</strong> Bevor Texte und Bilder
+              ver&ouml;ffentlicht werden, pr&uuml;ft ein Dienst von OpenAI sie automatisch auf
+              unzul&auml;ssige Inhalte. Betroffen sind Eventtitel und -beschreibungen, Namen und
+              Benutzernamen bei der Registrierung sowie hochgeladene Profil-, Titel- und
+              Eventbilder. Wer ein Ticket hochl&auml;dt, dessen Foto wird zus&auml;tzlich daraufhin
+              gepr&uuml;ft, ob es zum Event passt.
+            </p>
+            <p>
+              Diese Pr&uuml;fung l&auml;uft <strong>automatisiert und ohne menschliches Zutun</strong>.
+              Schl&auml;gt sie an, wird der Inhalt abgelehnt und nicht ver&ouml;ffentlicht. H&auml;ltst
+              du eine Ablehnung f&uuml;r falsch, wende dich an{' '}
+              <a href="mailto:support@occuroapp.com">support@occuroapp.com</a> &mdash; wir sehen sie
+              uns von Hand an. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+              (berechtigtes Interesse am Schutz der Nutzer vor rechtswidrigen Inhalten).
             </p>
           </section>
 
