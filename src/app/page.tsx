@@ -188,10 +188,20 @@ export default function HomePage() {
           <motion.figure
             initial="hidden" whileInView="visible" viewport={imBild} variants={bandRein}
             className="relative mx-auto max-w-[603px] rounded-[20px] overflow-hidden border border-line shadow-[0_30px_70px_-34px_rgba(0,0,0,0.5)]">
+            {/* QUALITAET 100 UND EINE GROESSENANGABE — beides noetig.
+                Next rechnet Bilder standardmaessig mit Qualitaet 75 neu. Bei
+                einer Karte mit haarfeinen Strassen und kleiner Schrift
+                zerfaellt das sichtbar; die Vorlage hier hat 93, davon blieb
+                nichts uebrig. Ohne `sizes` fragt Next ausserdem die groesste
+                Stufe an (w=3840) statt der Breite, in der das Band wirklich
+                steht — das kostet nur Rechenzeit und bringt kein Pixel mehr,
+                weil die Quelle 1206 breit ist. */}
             <Image
               src="/app-screenshots/karte-band.jpg"
               alt="Kartenausschnitt mit laufendem Event und den Freunden, die gerade dort sind"
               width={1206} height={630}
+              sizes="(max-width: 640px) 100vw, 603px"
+              quality={100}
               className="w-full h-auto block"
               priority
             />
