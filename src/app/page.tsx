@@ -11,9 +11,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { OutNowWordmark } from '@/components/outnow-wordmark';
+import { SiteNav } from '@/components/site-nav';
+import { SiteFooter } from '@/components/site-footer';
+import { APP_STORE_URL, WEB_APP_URL } from '@/lib/links';
 
-const APP_STORE_URL = 'https://apps.apple.com/app/occuro/id6760317905';
-const WEB_APP_URL = 'https://app.occuroapp.com';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -59,21 +60,6 @@ const orgFeatures: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: ShieldCheck, title: 'Verifiziertes Profil', desc: 'Zeig deiner Community, dass du geprüft bist. Mehr Vertrauen = mehr Teilnehmer.' },
 ];
 
-const userScreens = [
-  { src: '/app-screenshots/events.png', title: 'Event Feed', desc: 'Events in deiner Nähe im Feed — mit Filtern für Beliebt, Live, Heute und Wochenende. Oben siehst du direkt, bei welchen Events deine Freunde dabei sind.' },
-  { src: '/app-screenshots/event-detail.png', title: 'Event Details', desc: 'Alles zum Event auf einen Blick: Veranstalter, Start und Ende, Ort, Beschreibung. Mit einem Tap in den Kalender eintragen oder in Karten öffnen.' },
-  { src: '/app-screenshots/event-karte.png', title: 'Event-Karte', desc: 'Finde Events auf der Karte statt in einer Liste. Tippe einen Pin an und du siehst Titel, Ort, Zeitraum und Kategorie sofort.' },
-  { src: '/app-screenshots/karte-live.png', title: 'Was gerade läuft', desc: 'Events, die in diesem Moment laufen, sind auf der Karte schwarz markiert und mit LIVE beschriftet. Stehen Freunde dort, siehst du ihre Gesichter direkt am Pin.' },
-  { src: '/app-screenshots/freunde-vor-ort.png', title: 'Freunde vor Ort', desc: 'Wer von deinen Freunden gerade bei einem Event ist, steht in den Event-Details. Dafür muss man den Live-Standort selbst freigeben — sonst zeigt OutNow niemanden an.' },
-  { src: '/app-screenshots/entdecken-suche.png', title: 'Entdecken & Suche', desc: 'Suche nach Events, Personen und Veranstaltern. Darunter Vorschläge, die zu deinen Interessen passen.' },
-  { src: '/app-screenshots/kalender.png', title: 'Kalender', desc: 'Deine Events im Monatsüberblick. Tage mit Events sind markiert, ein Tap zeigt dir, was an dem Tag ansteht.' },
-];
-
-const organizerScreens = [
-  { src: '/app-screenshots/event-erstellen.png', title: 'Event erstellen', desc: 'Titel, Slogan, Datum, Ort — mehr braucht es nicht. Öffentlich oder privat, in unter einer Minute online.' },
-  { src: '/app-screenshots/gewinnspiel.png', title: 'Gewinnspiele', desc: 'Aktiviere ein Gewinnspiel direkt beim Anlegen: Gewinn, Anzahl der Gewinner und Ziehungszeitpunkt festlegen — die Ziehung läuft automatisch.' },
-];
-
 
 /* Die fuenf Reihen im Abschnitt „Die App". Reihenfolge ist Absicht: der
    Kernnutzen zuerst, dann Entdeckung, dann Werkzeuge. */
@@ -108,37 +94,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-page text-ink">
 
-      {/* ─── NAVBAR ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-page/80 border-b border-line">
-        <div className="relative max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-          <a href="#" className="flex items-center gap-2">
-            <OutNowWordmark size={20} layout="row" />
-          </a>
-          <div className="hidden md:flex items-center gap-8 text-[13px] text-ink-2 absolute left-1/2 -translate-x-1/2">
-            <a href="#unterschied" className="hover:text-gold transition-colors">Der Unterschied</a>
-            <a href="#die-app" className="hover:text-gold transition-colors">Die App</a>
-            <a href="#news" className="hover:text-gold transition-colors">Verlauf</a>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <a
-              href={WEB_APP_URL}
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-xl text-[13px] font-semibold bg-gold text-page hover:bg-gold-satt transition-all"
-            >
-              <Globe size={14} /> Web-App
-            </a>
-            {/* Nav Download — only on mobile/tablet (the App Store link is
-                useless on desktop, where users should open the Web-App). */}
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lg:hidden flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-[12px] sm:text-[13px] font-medium bg-btn text-btn-ink hover:scale-[1.02] active:scale-[0.98] transition-transform"
-            >
-              <Download size={14} /> Download
-            </a>
-          </div>
-        </div>
-      </nav>
+      <SiteNav aufStartseite />
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -309,43 +265,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="border-t border-line py-10 sm:py-12 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <OutNowWordmark size={16} layout="row" />
-            </div>
-            <p className="text-[12px] text-ink-2 leading-relaxed">
-              Events entdecken,<br />Momente teilen.
-            </p>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Produkt</p>
-            <div className="space-y-2 text-[13px] text-ink-2">
-              <a href={APP_STORE_URL} className="block hover:text-ink transition-colors">Download</a>
-              <a href="#unterschied" className="block hover:text-gold transition-colors">Der Unterschied</a>
-              <a href={WEB_APP_URL} className="block hover:text-ink transition-colors">Web-App</a>
-            </div>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Rechtliches</p>
-            <div className="space-y-2 text-[13px] text-ink-2">
-              <a href="/impressum" className="block hover:text-ink transition-colors">Impressum</a>
-              <a href="/datenschutz" className="block hover:text-ink transition-colors">Datenschutz</a>
-            </div>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Kontakt</p>
-            <a href="mailto:support@occuroapp.com" className="flex items-center gap-1.5 text-[13px] text-ink-2 hover:text-ink transition-colors">
-              <Mail size={13} /> support@occuroapp.com
-            </a>
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-line text-center text-[11px] text-ink-3">
-          &copy; {new Date().getFullYear()} occuro
-        </div>
-      </footer>
+      <SiteFooter aufStartseite />
     </div>
   );
 }

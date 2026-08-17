@@ -1,21 +1,24 @@
-import Link from 'next/link';
+import { RechtsSeite } from '@/components/rechts-seite';
 
 export const metadata = { title: 'Impressum — OutNow' };
 
+const ABSCHNITTE = [
+  { id: 'angaben', text: 'Angaben gemäß § 5 TMG' },
+  { id: 'verantwortlich', text: 'Verantwortlich für den Inhalt' },
+  { id: 'agb', text: 'Allgemeine Geschäftsbedingungen' },
+  { id: 'streit', text: 'Streitschlichtung' },
+];
+
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28">
-      <div className="max-w-2xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-gold transition-colors mb-10">
-          &larr; Zurück
-        </Link>
-
-        <p className="text-[11.5px] font-semibold text-gold uppercase tracking-[0.18em] mb-4">AGB & rechtliche Angaben</p>
-        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-[-0.012em] mb-2 mb-10">Impressum</h1>
-
-        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-gold/40 [&_a]:hover:decoration-gold">
+    <RechtsSeite
+      augenbraue="Rechtliche Angaben"
+      titel="Impressum & AGB"
+      vorspann="Wer hinter OutNow steht, und unter welchen Bedingungen die App genutzt wird."
+      abschnitte={ABSCHNITTE}
+    >
           <section>
-            <h2>Angaben gemäß § 5 TMG</h2>
+            <h2 id="angaben">Angaben gemäß § 5 TMG</h2>
             <p>
               occuro<br />
               Eggenfeldener Straße 32<br />
@@ -26,7 +29,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2>Verantwortlich für den Inhalt</h2>
+            <h2 id="verantwortlich">Verantwortlich für den Inhalt</h2>
             <p>
               Verantwortlich für den Inhalt dieser App ist occuro.
               Bei Fragen oder Anregungen erreichst du uns unter{' '}
@@ -37,7 +40,7 @@ export default function ImpressumPage() {
           <hr className="border-line" />
 
           <section>
-            <h2>Allgemeine Geschäftsbedingungen</h2>
+            <h2 id="agb">Allgemeine Geschäftsbedingungen</h2>
 
             <h3>1. Geltungsbereich</h3>
             <p>
@@ -74,7 +77,7 @@ export default function ImpressumPage() {
           <hr className="border-line" />
 
           <section>
-            <h2>Streitschlichtung</h2>
+            <h2 id="streit">Streitschlichtung</h2>
             <p>
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
               <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">
@@ -83,13 +86,6 @@ export default function ImpressumPage() {
               Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </p>
           </section>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-line flex gap-4 text-[13px] text-ink-3">
-          <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-          <Link href="/datenschutz" className="hover:text-ink transition-colors">Datenschutz</Link>
-        </div>
-      </div>
-    </main>
+    </RechtsSeite>
   );
 }

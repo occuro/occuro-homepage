@@ -1,21 +1,33 @@
-import Link from 'next/link';
+import { RechtsSeite } from '@/components/rechts-seite';
 
 export const metadata = { title: 'Datenschutz — OutNow' };
 
+const ABSCHNITTE = [
+  { id: 'a1', text: 'Verantwortlicher' },
+  { id: 'a2', text: 'Welche Daten wir erheben' },
+  { id: 'a3', text: 'Zweck der Datenverarbeitung' },
+  { id: 'a4', text: 'Rechtsgrundlage' },
+  { id: 'a5', text: 'Drittanbieter und Auftragsverarbeiter' },
+  { id: 'a6', text: 'Datensicherheit und Chat-Inhalte' },
+  { id: 'a7', text: 'Speicherdauer' },
+  { id: 'a8', text: 'Deine Rechte' },
+  { id: 'a9', text: 'Konto-Löschung' },
+  { id: 'a10', text: 'Live-Standort (optional)' },
+  { id: 'a11', text: 'Cookies' },
+  { id: 'a12', text: 'Beschwerderecht' },
+  { id: 'a13', text: 'Änderungen' },
+];
+
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen bg-page text-ink px-4 sm:px-6 py-20 sm:py-28">
-      <div className="max-w-2xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-gold transition-colors mb-10">
-          &larr; Zurück
-        </Link>
-
-        <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-[-0.012em] mb-2">Datenschutzerklärung</h1>
-        <p className="text-sm text-ink-3 mb-10">Stand: 19. März 2026</p>
-
-        <div className="space-y-10 text-[14px] text-ink-2 leading-relaxed [&_h2]:text-lg [&_h2]:font-heading [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-3 [&_h2]:mt-0 [&_h3]:text-[15px] [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-gold/40 [&_a]:hover:decoration-gold [&_table]:w-full [&_table]:text-[13px] [&_th]:text-left [&_th]:text-ink-3 [&_th]:pb-2 [&_th]:pr-4 [&_td]:py-2 [&_td]:pr-4 [&_td]:border-t [&_td]:border-line">
+    <RechtsSeite
+      augenbraue="Datenschutz"
+      titel="Was OutNow über dich speichert"
+      vorspann="Welche Daten erhoben werden, wofür sie verwendet werden, und wie du sie wieder loswirst."
+      abschnitte={ABSCHNITTE}
+    >
           <section>
-            <h2>1. Verantwortlicher</h2>
+            <h2 id="a1">1. Verantwortlicher</h2>
             <p>
               occuro<br />
               Eggenfeldener Straße 32<br />
@@ -26,7 +38,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>2. Welche Daten wir erheben</h2>
+            <h2 id="a2">2. Welche Daten wir erheben</h2>
             <p>Bei der Nutzung von OutNow (App und Website) erheben wir folgende Daten:</p>
 
             <h3>2.1 Registrierung & Profil</h3>
@@ -89,7 +101,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>3. Zweck der Datenverarbeitung</h2>
+            <h2 id="a3">3. Zweck der Datenverarbeitung</h2>
             <ul>
               <li>Bereitstellung der App-Funktionen (Events, Profil, Chat, Freunde)</li>
               <li>Authentifizierung und Kontosicherheit</li>
@@ -101,7 +113,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>4. Rechtsgrundlage</h2>
+            <h2 id="a4">4. Rechtsgrundlage</h2>
             <p>
               Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — Bereitstellung des Dienstes),
               Art. 6 Abs. 1 lit. a DSGVO (Einwilligung — z.B. Standort, Push-Notifications) und
@@ -110,7 +122,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>5. Drittanbieter und Auftragsverarbeiter</h2>
+            <h2 id="a5">5. Drittanbieter und Auftragsverarbeiter</h2>
             <p>Wir nutzen folgende Dienste zur Bereitstellung von OutNow:</p>
             <table>
               <thead>
@@ -148,7 +160,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>6. Datensicherheit und Chat-Inhalte</h2>
+            <h2 id="a6">6. Datensicherheit und Chat-Inhalte</h2>
             <p>
               Die Verbindung zwischen App und unseren Servern ist durchgehend
               mit TLS verschlüsselt. Beim Hosting-Dienstleister werden die Daten
@@ -170,7 +182,7 @@ export default function DatenschutzPage() {
               ein.
             </p>
 
-            <h2>7. Speicherdauer</h2>
+            <h2 id="a7">7. Speicherdauer</h2>
             <ul>
               <li>Profildaten: bis zur Löschung deines Kontos</li>
               <li>Events: bis zur Löschung durch den Ersteller oder 12 Monate nach Ablauf</li>
@@ -181,7 +193,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>8. Deine Rechte</h2>
+            <h2 id="a8">8. Deine Rechte</h2>
             <p>Du hast jederzeit das Recht auf:</p>
             <ul>
               <li><strong>Auskunft</strong> (Art. 15 DSGVO) — welche Daten wir über dich speichern</li>
@@ -196,7 +208,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>9. Konto-Löschung</h2>
+            <h2 id="a9">9. Konto-Löschung</h2>
             <p>
               Du kannst dein Konto jederzeit in der App unter Profil &rarr; Einstellungen &rarr; Konto löschen entfernen.
               Dabei werden alle deine personenbezogenen Daten unwiderruflich gelöscht.
@@ -204,7 +216,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>10. Live-Standort (optional)</h2>
+            <h2 id="a10">10. Live-Standort (optional)</h2>
             <p>
               Wenn du &bdquo;Live-Standort teilen&ldquo; in den App-Einstellungen aktivierst, wird dein Standort
               im Hintergrund erfasst und mit deinen Freunden geteilt — ausschließlich um anzuzeigen,
@@ -225,7 +237,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>11. Cookies</h2>
+            <h2 id="a11">11. Cookies</h2>
             <p>
               Die OutNow-Website verwendet keine Tracking-Cookies und kein Analytics.
               Es werden nur technisch notwendige Cookies für die Funktion der Website gesetzt.
@@ -233,7 +245,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>12. Beschwerderecht</h2>
+            <h2 id="a12">12. Beschwerderecht</h2>
             <p>
               Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
               Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA),
@@ -242,19 +254,12 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2>13. Änderungen</h2>
+            <h2 id="a13">13. Änderungen</h2>
             <p>
               Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.
               Die aktuelle Version ist stets hier abrufbar.
             </p>
           </section>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-line flex gap-4 text-[13px] text-ink-3">
-          <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-          <Link href="/impressum" className="hover:text-ink transition-colors">Impressum</Link>
-        </div>
-      </div>
-    </main>
+    </RechtsSeite>
   );
 }
