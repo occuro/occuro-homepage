@@ -50,6 +50,18 @@ export const metadata: Metadata = {
     'Veranstaltungen Bayern', 'Freunde Events', 'Volksfeste', 'Event Kalender',
   ],
   category: 'events',
+  // Nachweis fuer die Google Search Console. Next erzeugt daraus
+  // <meta name="google-site-verification" content="..."> im <head>.
+  //
+  // Die Datei public/google8d05f155ff5d25c8.html liegt zusaetzlich daneben —
+  // Google bietet beide Wege an, und welchen es prueft, entscheidet es
+  // selbst. Beide kosten nichts, also stehen beide da.
+  //
+  // BEIDES MUSS BLEIBEN: Google prueft den Nachweis in unregelmaessigen
+  // Abstaenden erneut. Wer das hier spaeter fuer "Altlast" haelt und
+  // aufraeumt, verliert den Zugang zur Search Console — und merkt es erst,
+  // wenn die Daten fehlen.
+  verification: { google: 'ODlRGq3-1jVjgT3VgzrW5WVI3rEvVh9Im0AEo-ImdOs' },
   robots: { index: true, follow: true },
 };
 
