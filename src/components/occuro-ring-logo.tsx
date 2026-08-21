@@ -1,8 +1,6 @@
 'use client';
 
-/* 24 feine Speichen statt 16 kraeftiger Bloecke: am 17.08.2026 als neues
-   Markenzeichen festgelegt. Gleiche Kranzidee, ruhigere Ausfuehrung. */
-const N = 24;
+const N = 16;
 
 interface OccuroRingLogoProps {
   size?: number;
@@ -11,23 +9,18 @@ interface OccuroRingLogoProps {
 }
 
 export function OccuroRingLogo({ size = 44, color, className }: OccuroRingLogoProps) {
-  /* Markenfarbe als Vorgabe: das Zeichen traegt sie immer, ausser jemand
-     setzt bewusst etwas anderes (z.B. einfarbige Ausgabe fuer den Druck). */
   const cx = size / 2;
   const cy = size / 2;
-  const r  = size * (16 / 44);
-  const w  = size * (2.4 / 44);
-  const h  = size * (7.6 / 44);
-  const rx = size * (1.2 / 44);
+  const r  = size * (17 / 44);
+  const w  = size * (8  / 44);
+  const h  = size * (9  / 44);
+  const rx = size * (4  / 44);
 
   const shards = Array.from({ length: N }, (_, i) => {
     const angle = -Math.PI / 2 + (i / N) * 2 * Math.PI;
-    /* Gerundet, weil Server und Browser sonst minimal verschiedene
-       Nachkommastellen erzeugen und React eine Abweichung meldet. */
-    const rd = (v: number) => Math.round(v * 1000) / 1000;
-    const x = rd(cx + r * Math.cos(angle));
-    const y = rd(cy + r * Math.sin(angle));
-    const rot = rd((angle * 180 / Math.PI) + 90);
+    const x = cx + r * Math.cos(angle);
+    const y = cy + r * Math.sin(angle);
+    const rot = (angle * 180 / Math.PI) + 90;
     return { x, y, rot };
   });
 
@@ -48,7 +41,7 @@ export function OccuroRingLogo({ size = 44, color, className }: OccuroRingLogoPr
           height={h}
           rx={rx}
           ry={rx}
-          fill={color ?? 'var(--gold)'}
+          fill={color ?? 'currentColor'}
           transform={`rotate(${s.rot} ${s.x} ${s.y})`}
         />
       ))}
