@@ -23,7 +23,7 @@ export function SiteFooter({ aufStartseite = false }: { aufStartseite?: boolean 
             <OutNowWordmark size={16} layout="row" />
           </div>
           <p className="text-[12px] text-ink-2 leading-relaxed">
-            Events entdecken,<br />Momente teilen.
+            moments,<br />together.
           </p>
         </div>
         <div>
