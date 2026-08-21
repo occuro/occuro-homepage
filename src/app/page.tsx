@@ -99,8 +99,8 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <GoldMesh variante="zeiger" />
-        {/* max-w-3xl: the headline is two fixed lines ("Events entdecken," /
-            "Momente teilen.") — 2xl is narrow enough that the first line
+        {/* max-w-3xl: the headline is two fixed lines ("Alles, was läuft." /
+            "Mit den Leuten, die du kennst.") — 2xl is narrow enough that the first line
             wraps at the large desktop size and breaks that structure. */}
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6" data-grid-exclude>
           <motion.div
@@ -120,15 +120,15 @@ export default function HomePage() {
             className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] leading-[1.05] font-heading font-bold tracking-[-0.012em]"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Sieh, wo deine<br />
-            <span className="text-ink-3">Leute hingehen.</span>
+            Alles, was läuft.<br />
+            <span className="text-ink-3">Mit den Leuten, die du kennst.</span>
           </motion.h1>
           <motion.p
             className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-ink-2 max-w-md mx-auto leading-relaxed px-2"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Welche Freunde wo zugesagt haben. Wer gerade unterwegs ist. Und was
-            am Wochenende überhaupt läuft.
+            Von Volksfest bis Konzert — und du siehst, wer von deinen Freunden
+            zugesagt hat und wer gerade vor Ort ist.
           </motion.p>
           <motion.div
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-0"

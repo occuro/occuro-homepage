@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const stand = new Date();
   return [
     { url: SITE_URL, lastModified: stand, changeFrequency: 'weekly', priority: 1 },
+    { url: `${SITE_URL}/ueber`, lastModified: stand, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${SITE_URL}/impressum`, lastModified: stand, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${SITE_URL}/datenschutz`, lastModified: stand, changeFrequency: 'yearly', priority: 0.3 },
   ];

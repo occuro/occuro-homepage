@@ -21,6 +21,9 @@ import { APP_STORE_URL, WEB_APP_URL } from '@/lib/links';
 const REITER = [
   { ziel: '#unterschied', text: 'Der Unterschied' },
   { ziel: '#die-app', text: 'Die App' },
+  // Als eigene Seite, nicht als Sprungmarke: Sie steht fuer sich und soll
+  // auch aus einer Suche heraus erreichbar sein.
+  { ziel: '/ueber', text: 'Über uns', eigeneSeite: true },
   { ziel: '#news', text: 'Verlauf' },
 ];
 
@@ -34,7 +37,11 @@ export function SiteNav({ aufStartseite = false }: { aufStartseite?: boolean }) 
         </a>
         <div className="hidden md:flex items-center gap-8 text-[13px] text-ink-2 absolute left-1/2 -translate-x-1/2">
           {REITER.map((r) => (
-            <a key={r.ziel} href={`${vor}${r.ziel}`} className="hover:text-gold transition-colors">
+            <a
+              key={r.ziel}
+              href={'eigeneSeite' in r && r.eigeneSeite ? r.ziel : `${vor}${r.ziel}`}
+              className="hover:text-gold transition-colors"
+            >
               {r.text}
             </a>
           ))}

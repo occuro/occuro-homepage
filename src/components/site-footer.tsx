@@ -23,7 +23,7 @@ export function SiteFooter({ aufStartseite = false }: { aufStartseite?: boolean 
             <OutNowWordmark size={16} layout="row" />
           </div>
           <p className="text-[12px] text-ink-2 leading-relaxed">
-            moments,<br />together.
+            moments, together.
           </p>
         </div>
         <div>
@@ -37,6 +37,7 @@ export function SiteFooter({ aufStartseite = false }: { aufStartseite?: boolean 
         <div>
           <p className="text-[11px] font-medium text-ink-3 uppercase tracking-wider mb-3">Rechtliches</p>
           <div className="space-y-2 text-[13px] text-ink-2">
+            <a href="/ueber" className="block hover:text-ink transition-colors">Über uns</a>
             <a href="/impressum" className="block hover:text-ink transition-colors">Impressum</a>
             <a href="/datenschutz" className="block hover:text-ink transition-colors">Datenschutz</a>
           </div>
