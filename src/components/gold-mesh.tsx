@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 /**
  * Das Punktfeld hinter der Seite.
  *
- * Ein gleichmaessiges Raster feiner Punkte in der Markenfarbe. Punkte in der
+ * Ein gleichmaessiges Raster feiner Punkte. Punkte in der
  * Naehe des Zeigers werden heller und ruecken ein Stueck heran — dieselbe
  * Idee wie im Pitch-Deck, nur umgekehrt: dort streben Lichter auf
  * Veranstaltungsorte zu, hier ist der Zeiger der Ort.
@@ -69,7 +69,10 @@ export function GoldMesh({
       const b = c.getBoundingClientRect();
       ctx.clearRect(0, 0, b.width, b.height);
 
-      const farbe = dunkel ? '217,196,160' : '138,110,60';
+      // Neutral, nicht Gold — auf ausdruecklichen Wunsch am 21.08.2026.
+      // Schwarze Punkte auf hellem Grund, weisse auf dunklem: dieselbe
+      // Zurueckhaltung wie in der alten Handschrift.
+      const farbe = dunkel ? '250,250,248' : '26,26,26';
 
       // Scrollfortschritt dieses Abschnitts: 0 = kommt herein, 1 = ist oben raus.
       const fortschritt = 1 - Math.max(0, Math.min(1,

@@ -48,12 +48,27 @@
   --live: #22C55E;          /* running now / attending */
   --like: #F43F5E;          /* interested / like */
   --pin: #FF3B30;           /* map pins */
+
+  /* AKZENT — neutral, nicht Gold.
+     Der Seitenaufbau vom 17.08.2026 verlangt diese drei Token (Knoepfe,
+     Ringfarbe, Schatten). Die Schrift und das Zeichen sind am 21.08. auf
+     den alten Stand zurueckgegangen, der Aufbau bleibt — deshalb muessen
+     die Token da sein, aber in der alten, neutralen Handschrift:
+     Schwarz auf hellem Grund, Weiss auf dunklem. Ohne sie waren Logo,
+     Knoepfe und "Im App Store oeffnen" schlicht unsichtbar. */
+  --gold: #1A1A1A;
+  --gold-satt: #000000;
+  --gold-leise: #1A1A1A1F;
   --danger: #EF4444;        /* destructive actions */
   --verified: #3B82F6;      /* verified badge — nothing else */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Akzent im Dunkeln — die Umkehrung der Werte oben. */
+    --gold: #FAFAF8;
+    --gold-satt: #FFFFFF;
+    --gold-leise: #FAFAF81F;
     --page: #121212;
     --surface: #1E1E1E;
     --elevated: #2A2A2A;
@@ -93,6 +108,13 @@
   --color-live: var(--live);
   --color-like: var(--like);
   --color-pin: var(--pin);
+
+  /* Ohne diese drei Zeilen kennt Tailwind die Klassen bg-gold, text-gold
+     und border-gold nicht — sie fielen ersatzlos weg, und die Knoepfe
+     ("Im App Store oeffnen") standen unsichtbar auf der Seite. */
+  --color-gold: var(--gold);
+  --color-gold-satt: var(--gold-satt);
+  --color-gold-leise: var(--gold-leise);
   --color-danger: var(--danger);
   --color-verified: var(--verified);
 
